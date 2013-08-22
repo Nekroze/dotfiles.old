@@ -8,6 +8,6 @@ PROGRAMS="emacs mc python python-pip python-setuptools"
 
 echo "What command do you use to install packages? Including options?"
 read PACKER
-if [ -z $PACKER ]; then exit 2; fi
+if [[ -z $PACKER ]]; then exit 2; fi
 
-$PACKER $PROGRAMS
+exec sudo $PACKER $PROGRAMS
