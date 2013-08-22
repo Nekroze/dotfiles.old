@@ -1,2 +1,2 @@
 source ~/dotfiles/exports.sh
-source ~/dotfiles/alises.sh
+source ~/dotfiles/aliases.sh
