@@ -45,7 +45,7 @@ echo "Backing up any existing dotfiles in ~ to $olddir and replacing with dotfil
 for file in $files; do
     mv -f ~/.$file ~/dotfiles_old/
     echo "Linking ~/.$file"
-    ln -s $dir/$file ~/.$file
+    ln -fs $dir/$file ~/.$file
 done
 
 ########## Optional extras
@@ -55,7 +55,7 @@ echo "Do you wish to apply some useful global git configs?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) sh ~/dotfiles/gitconfigs.sh; break;;
-        No ) exit;;
+        No ) break;;
     esac
 done
 
@@ -64,6 +64,6 @@ echo "Do you wish to install some useful programs?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) sh ~/dotfiles/programs.sh; break;;
-        No ) exit;;
+        No ) break;;
     esac
 done
