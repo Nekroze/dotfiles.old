@@ -10,4 +10,4 @@ echo "What command do you use to install packages? Including options?"
 read PACKER
 if [[ -z $PACKER ]]; then exit 2; fi
 
-exec sudo $PACKER $PROGRAMS
+exec $PACKER $PROGRAMS
