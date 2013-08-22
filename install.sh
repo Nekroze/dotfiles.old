@@ -1,8 +1,8 @@
 #!/bin/sh
 ############################
-# .make.sh
+# install.sh
 # This script creates symlinks from the home directory to any desired dotfiles
-#in ~/dotfiles
+# in ~/dotfiles
 ############################
 
 ########## Variables
@@ -45,4 +45,22 @@ for file in $files; do
     mv -f ~/.$file ~/dotfiles_old/
     echo "Linking ~/.$file"
     ln -s $dir/$file ~/.$file
+done
+
+########## Optional extras
+
+echo "Do you wish to apply some useful global git configs?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) sh ~/dotfiles/gitconfigs.sh; break;;
+        No ) exit;;
+    esac
+done
+
+echo "Do you wish to install some useful programs?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) sh ~/dotfiles/programs.sh; break;;
+        No ) exit;;
+    esac
 done
