@@ -49,6 +49,7 @@ done
 
 ########## Optional extras
 
+echo
 echo "Do you wish to apply some useful global git configs?"
 select yn in "Yes" "No"; do
     case $yn in
@@ -57,6 +58,7 @@ select yn in "Yes" "No"; do
     esac
 done
 
+echo
 echo "Do you wish to install some useful programs?"
 select yn in "Yes" "No"; do
     case $yn in
