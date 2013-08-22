@@ -9,9 +9,9 @@ Installation
 This repo contains a simple installer. From a new environment to full setup
 this is all you need to do:
 
-    $ cd ~/
-    $ git clone https://github.com/Nekroze/dotfiles.git
-    $ sh dotfile/install.sh
+    cd ~/
+    git clone https://github.com/Nekroze/dotfiles.git
+    sh dotfile/install.sh
     
 After this the next time your shell is started you will be using this
 environment. Any files that get replaced will be moved to `~/dotfiles_old` for
@@ -24,11 +24,11 @@ its install option. For example.
 
 Debian/Ubuntu:
     
-    $ sudo apt-get install
+    sudo apt-get install
     
 Arch:
 
-    $ sudo pacman -S
+    sudo pacman -S
     
 If you don't know how to use your distributions package manager then get
 googling!
