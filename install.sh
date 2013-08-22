@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 ############################
 # .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles
@@ -31,19 +31,17 @@ fi
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
 mkdir -p $olddir
-echo "done"
 
 # change to the dotfiles directory
 echo -n "Changing to the $dir directory ..."
 cd $dir
-echo "done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create
 # symlinks from the homedir to any files in the ~/dotfiles directory specified
 # in $files
+echo "Backing up any existing dotfiles in ~ to $olddir and replacing with dotfiles symlinks"
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
     mv -f ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
+    echo "Linking ~/.$file"
     ln -s $dir/$file ~/.$file
 done
