@@ -19,7 +19,7 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
         git clone https://github.com/robbyrussell/oh-my-zsh.git
-        ln -fs eturnilnetwork.zsh-theme oh-my-zsh/custom/
+        cp -f eturnilnetwork.zsh-theme oh-my-zsh/custom/
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
