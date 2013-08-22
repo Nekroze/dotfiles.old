@@ -42,5 +42,6 @@ Features
 * Handy *git* aliases to commong commands
 * *Rpython* compilation alias for *pypy* compilation of *Rpython* to a binary
 * Automatic dot rationalisation for directories in *zsh*
-* Sets emacs as the default text editor using a daemon for fast loading
-* Nice solorized style theme for terminator
+* Sets *emacs* as the default text editor using a daemon for fast loading
+* Nice *solorized* style theme for *terminator*
+* Can automatically install some basic tools for using *python*
