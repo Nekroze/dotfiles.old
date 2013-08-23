@@ -43,13 +43,13 @@ cp -r ~/dotfiles/config/terminator ~/.config/
 
 echo "Installing bash config"
 mv -f ~/.bashrc ~/dotfiles_old/
-echo "source ~/dotfiles/bash.sh" > ~/.bashrc
-echo "source ~/dotfiles/shellenv.sh" >> ~/.bashrc
+echo "source ~/dotfiles/bash.sh
+source ~/dotfiles/shellenv.sh" > ~/.bashrc
 
 echo "Installing zsh config"
 mv -f ~/.zshrc ~/dotfiles_old/
-echo "source ~/dotfiles/zsh.sh" > ~/.zshrc
-echo "source ~/dotfiles/shellenv.sh" >> ~/.zshrc
+echo "source ~/dotfiles/zsh.sh
+source ~/dotfiles/shellenv.sh" > ~/.zshrc
 
 echo "Installing emacs config"
 mv -f ~/.emacs ~/dotfiles_old/
