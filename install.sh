@@ -37,9 +37,9 @@ fi
 ########## Copy files
 
 echo "Installing terminator config"
-mkdir -p ~/.config
+mkdir -p ~/.config ~/dotfiles_old/.config
 mv -f ~/.config/terminator ~/dotfiles_old/.config/terminator
-cp -r ~/dotfiles/config/terminator ~/.config/terminator
+cp -r ~/dotfiles/config/terminator ~/.config/
 
 echo "Installing bash config"
 echo "source ~/dotfiles/bash.sh" >> ~/.bashrc
@@ -68,3 +68,9 @@ select yn in "Yes" "No"; do
         No ) break;;
     esac
 done
+
+########## Exit
+
+echo
+echo "Installation completed"
+echo "Solong and thanks for all the fish!"
