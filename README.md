@@ -49,3 +49,4 @@ Features
 * Sets *emacs* as the default text editor using a daemon for fast loading
 * Nice *solorized* style theme for *terminator*
 * Can automatically install some basic tools for using *python*
+* Many handy configurations and tools for *emacs*
