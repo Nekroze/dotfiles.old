@@ -42,11 +42,11 @@ mv -f ~/.config/terminator ~/dotfiles_old/.config/terminator
 cp -r ~/dotfiles/config/terminator ~/.config/terminator
 
 echo "Installing bash config"
-echo "source ~/dotfiles/bash" >> ~/.bashrc
+echo "source ~/dotfiles/bash.sh" >> ~/.bashrc
 echo "source ~/dotfiles/shellenv.sh" >> ~/.bashrc
 
 echo "Installing zsh config"
-echo "source ~/dotfiles/zsh" >> ~/.zshrc
+echo "source ~/dotfiles/zsh.sh" >> ~/.zshrc
 echo "source ~/dotfiles/shellenv.sh" >> ~/.zshrc
 
 ########## Optional extras
