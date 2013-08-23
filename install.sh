@@ -9,7 +9,6 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc zshrc config/terminator/config"
 
 ########## Manage directories
 
@@ -25,33 +24,30 @@ cd $dir
 
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
-    # Clone my oh-my-zsh repository from GitHub only if it isn't already
-    # present
+    # Clone oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
+        echo "Installing oh-my-zsh with custom theme"
         git clone https://github.com/robbyrussell/oh-my-zsh.git
         cp -f eturnilnetwork.zsh-theme oh-my-zsh/custom/
         mv -f ~/.oh-my-zsh ~/dotfiles_old
         mv oh-my-zsh ~/.oh-my-zsh
     fi
-    # Set the default shell to zsh if it isn't currently set to zsh
-    if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-        chsh -s $(which zsh)
-    fi
 fi
 
 ########## Copy files
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create
-# symlinks from the homedir to any files in the ~/dotfiles directory specified
-# in $files
-mkdir -p ~/.config/terminator
-mkdir -p ~/dotfiles_old/.config/terminator
-echo "Backing up any existing dotfiles $olddir and replacing symlinks"
-for file in $files; do
-    mv -f ~/.$file ~/dotfiles_old/
-    echo "Linking ~/.$file"
-    cp $dir/$file ~/.$file
-done
+echo "Installing terminator config"
+mkdir -p ~/.config
+mv -f ~/.config/terminator ~/dotfiles_old/.config/terminator
+cp -r ~/dotfiles/config/terminator ~/.config/terminator
+
+echo "Installing bash config"
+echo "source ~/dotfiles/bash" >> ~/.bashrc
+echo "source ~/dotfiles/shellenv.sh" >> ~/.bashrc
+
+echo "Installing zsh config"
+echo "source ~/dotfiles/zsh" >> ~/.zshrc
+echo "source ~/dotfiles/shellenv.sh" >> ~/.zshrc
 
 ########## Optional extras
 
