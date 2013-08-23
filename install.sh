@@ -75,6 +75,15 @@ select yn in "Yes" "No"; do
     esac
 done
 
+echo
+echo "Do you wish to install some useful emacs plugins?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) sh ~/dotfiles/emacs.sh; break;;
+        No ) break;;
+    esac
+done
+
 ########## Exit
 
 echo
