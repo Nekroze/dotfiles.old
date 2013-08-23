@@ -9,7 +9,6 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-# list of files/folders to symlink in homedir
 files="bashrc zshrc oh-my-zsh config/terminator/config"
 
 ########## Setup zsh and oh-my-zsh
@@ -46,7 +45,7 @@ echo "Backing up any existing dotfiles $olddir and replacing symlinks"
 for file in $files; do
     mv -f ~/.$file ~/dotfiles_old/
     echo "Linking ~/.$file"
-    ln -fs $dir/$file ~/.$file
+    cp $dir/$file ~/.$file
 done
 
 ########## Optional extras
