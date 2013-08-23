@@ -51,6 +51,10 @@ mv -f ~/.zshrc ~/dotfiles_old/
 echo "source ~/dotfiles/zsh.sh" > ~/.zshrc
 echo "source ~/dotfiles/shellenv.sh" >> ~/.zshrc
 
+echo "Installing emacs config"
+mv -f ~/.emacs ~/dotfiles_old/
+echo "(load-file \"~/dotfiles/emacs.el\")" > ~/.emacs
+
 ########## Optional extras
 
 echo
