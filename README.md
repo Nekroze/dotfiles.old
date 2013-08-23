@@ -33,6 +33,10 @@ Arch:
 If you don't know how to use your distributions package manager then get
 googling!
 
+Once installed you will have your own `~/.bashrc` and `~/.zshrc` that are setup
+to load the settings of this repo but allow you to tack on your own settings to
+these files as well without it interupting this dotfiles repo at all.
+
 Features
 --------
 
