@@ -6,7 +6,7 @@ if type "emacs" > /dev/null; then
     emacs --batch --eval '(byte-compile-file "~/dotfiles/emacs.el")'
 
     for plugin in $plugins; do
-        emacs --batch --eval "(package-install \"$plugin\")"
+        emacs -l ~/.emacs --batch --eval "(package-install '$plugin)"
     done
 else
     echo
