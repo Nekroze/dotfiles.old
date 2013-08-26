@@ -1,4 +1,15 @@
 # Shell Aliases
+## Functions
+pullall() {
+    cwd=$(pwd)
+    cd ~/git
+    for dir in */; do
+        cd $dir
+        git pull
+        cd ../
+    done
+    cd $cwd
+}
 ## ls Aliases
 alias ls='ls -h --color'
 alias lx='ls -lXB'         #  Sort by extension.
