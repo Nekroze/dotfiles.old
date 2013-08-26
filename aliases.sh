@@ -13,6 +13,7 @@ pullall() {
     cd $cwd
 }
 # Shell Aliases
+alias dotupdate='cd ~/dotfile && git pull && cd ../'
 ## ls
 alias ls='ls -h --color'
 alias lx='ls -lXB'         #  Sort by extension.
