@@ -27,7 +27,6 @@ alias rpython=$RPYTHON
 alias emacs=$EDITOR
 alias clean='find ./ -iname "*.pyc" -exec rm {} \; && find ./ -iname "#*" -exec rm {} \;'
 ## Project Management Aliases
-alias pullall='cd ~/git && python pull.py'
 alias newproj='cookiecutter https://github.com/Nekroze/cookiecutter-pypackage.git'
 ## Package Management Aliases
 alias packer='sudo packer --noedit --noconfirm'
