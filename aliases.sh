@@ -1,16 +1,13 @@
 # Functions
 ## Project Management
 pullall() {
-    cwd=$(pwd)
     cd ~/git
     for dir in */; do
-        echo
-        echo "Pulling $dir"
+        echo "\nPulling $dir"
         cd $dir
         git pull
         cd ../
     done
-    cd $cwd
 }
 # Shell Aliases
 ## ls
