@@ -12,14 +12,6 @@ pullall() {
     done
     cd $cwd
 }
-## Shell control
-rationalise-dot() {
-  if [[ $LBUFFER = *.. ]]; then
-    LBUFFER+=/..
-  else
-    LBUFFER+=.
-  fi
-}
 # Shell Aliases
 ## ls
 alias ls='ls -h --color'
