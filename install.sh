@@ -67,10 +67,10 @@ select yn in "Yes" "No"; do
 done
 
 echo
-echo "Do you wish to install some useful programs?"
+echo "Do you wish to install some useful packages?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) sh ~/dotfiles/programs.sh; break;;
+        Yes ) sh ~/dotfiles/packages.sh; break;;
         No ) break;;
     esac
 done
