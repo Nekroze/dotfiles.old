@@ -4,7 +4,7 @@
 # This script installs some handy programs
 ############################
 
-PROGRAMS="emacs mc python python-pip python-setuptools python-tox python-sphinx
+PROGRAMS="emacs aspell-en mc python python-pip python-setuptools python-tox python-sphinx
 python-pytest"
 PYPACKAGES="cookiecutter flake8 pylint"
 
