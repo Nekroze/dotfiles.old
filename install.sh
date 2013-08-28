@@ -46,6 +46,12 @@ mv -f ~/.bashrc ~/dotfiles_old/
 echo "source ~/dotfiles/bash.sh
 source ~/dotfiles/shellenv.sh" > ~/.bashrc
 
+echo "Installing editor executable"
+mv -f ~/.editor ~/dotfiles_old/
+echo "#!/bin/sh
+source ~/dotfiles/emacsclient.sh" > ~/.editor
+chmod a+x ~/.editor
+
 echo "Installing zsh config"
 mv -f ~/.zshrc ~/dotfiles_old/
 echo "source ~/dotfiles/zsh.sh
