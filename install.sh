@@ -67,7 +67,7 @@ echo
 echo "Do you wish to apply some useful global git configs?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) sh ~/dotfiles/gitconfigs.sh; break;;
+        Yes ) sh ~/dotfiles/gitsetup.sh; break;;
         No ) break;;
     esac
 done
