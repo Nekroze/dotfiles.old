@@ -20,10 +20,10 @@ git config --global branch.autosetupmerge true
 git config --global rerere.enabled true
 git config --global merge.stat true
 
-echo "Do you want to clone all your github repos with ssh?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) ruby ~/dotfiles/gitback.rb; break;;
-        No ) break;;
-    esac
-done
+#echo "Do you want to clone all your github repos with ssh?"
+#select yn in "Yes" "No"; do
+#    case $yn in
+#        Yes ) ruby ~/dotfiles/gitback.rb; break;;
+#        No ) break;;
+#    esac
+#done
