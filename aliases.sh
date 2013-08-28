@@ -31,7 +31,7 @@ alias clean='find ./ -iname "*.pyc" -exec rm {} \; && find ./ -iname "#*" -exec 
 ## Project Management
 alias newproj='cookiecutter https://github.com/Nekroze/cookiecutter-pypackage.git'
 ## Package Management
-alias packer='sudo packer --noedit --noconfirm'
-alias update='sudo packer --noedit --noconfirm -Syu'
+alias aptin='sudo apt-get install'
+alias update='sudo apt-get update && sudo apt-get upgrade'
 ## Stupidly Long
 alias mc='mc -C base_color=lightgray,blue:normal=blue,default:reverse=green,default:gauge=gray,lightgray:selected=white,blue:marked=yellow,default:markselect=yellow,default:directory=brightblue,default:executable=brightgreen,default:link=cyan,default:device=brightmagenta,default:core=red,default:special=lightgray,default:dnormal=lightgray,blue:dfocus=lightgray,black:dhotnormal=yellow,blue:dhotfocus=yellow,black:menunormal=lightgray,blue:menuhot=yellow,blue:menusel=lightgray,black:menuhotsel=yellow,black:menuinactive=lightgray,gray:errors=lightgray,red:errdhotnormal=yellow,red:errdhotfocus=yellow,lightgray:input=lightblue,gray:inputunchanged=blue,gray:inputmark=white,blue:bbarhotkey=white,black:bbarbutton=lightgray,blue:viewbold=lightgray,default:viewunderline=lightblue,default:viewselected=lightgray,grey:helpnormal=lightgray,default:helpitalic=lightblue,default:helpbold=lightgray,default:helplink=green,default:helpslink=lighgreen,defalt:'
