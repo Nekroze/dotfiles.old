@@ -1,4 +1,4 @@
-plugins="marmalade makefile-runner org solarized-theme markdown-mode"
+plugins="marmalade makefile-runner org solarized-theme markdown-mode git-commit-mode flycheck flymake"
 
 if type "emacs" > /dev/null; then
     echo
