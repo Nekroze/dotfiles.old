@@ -4,7 +4,7 @@
 # This script installs some handy programs
 ############################
 
-PROGRAMS="emacs24 terminator zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest"
+PROGRAMS="emacs24 terminator zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest python-dev-all"
 PYPACKAGES="cookiecutter flake8 pylint"
 echo
 echo "Installing Software Packages"
