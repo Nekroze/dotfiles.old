@@ -26,7 +26,6 @@ alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 ## Mis Aliases
 alias rpython=$RPYTHON
 alias emacs=$EDITOR
-alias edit=$EDITOR
 alias clean='find ./ -iname "*.pyc" -exec rm {} \; && find ./ -iname "#*" -exec rm {} \;'
 ## Project Management
 alias newproj='cookiecutter https://github.com/Nekroze/cookiecutter-pypackage.git'
