@@ -6,6 +6,20 @@ an ubuntu based distribution of linux, these dotfiles will work in almost any
 POSIX based environment. The only part likely to fail is the package
 installations and maybe some of the aliases for package management.
 
+Features
+--------
+
+* Great support for *zsh*
+* Automatically installs *oh-my-zsh*
+* A nice *zsh* prompt designed for *git* use with a *solarized* color scheme
+* Handy *git* aliases to commong commands
+* *Rpython* compilation alias for *pypy* compilation of *Rpython* to a binary
+* Automatic dot rationalisation for directories in *zsh*
+* Sets *emacs* as the default text editor using a daemon for fast loading
+* Nice *solorized* style theme for *terminator*
+* Can automatically install some basic tools for using *python*
+* Many handy configurations and tools for *emacs*
+
 Installation
 ------------
 
@@ -90,17 +104,3 @@ the `~/git/` directory. If you do store you repositories there that is. To
 perform a pull on each repo simply call:
 
     $ pullall
-
-Features
---------
-
-* Great support for *zsh*
-* Automatically installs *oh-my-zsh*
-* A nice *zsh* prompt designed for *git* use with a *solarized* color scheme
-* Handy *git* aliases to commong commands
-* *Rpython* compilation alias for *pypy* compilation of *Rpython* to a binary
-* Automatic dot rationalisation for directories in *zsh*
-* Sets *emacs* as the default text editor using a daemon for fast loading
-* Nice *solorized* style theme for *terminator*
-* Can automatically install some basic tools for using *python*
-* Many handy configurations and tools for *emacs*
