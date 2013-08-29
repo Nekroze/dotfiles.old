@@ -1,7 +1,10 @@
 dotfiles
 ========
 
-dotfiles I use in my POSIX development environments.
+dotfiles I use in my POSIX development environments. While designed for use in
+an ubuntu based distribution of linux, these dotfiles will work in almost any
+POSIX based environment. The only part likely to fail is the package
+installations and maybe some of the aliases for package management.
 
 Installation
 ------------
