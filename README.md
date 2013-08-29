@@ -11,7 +11,7 @@ this is all you need to do:
 
     cd ~/
     git clone https://github.com/Nekroze/dotfiles.git
-    bash dotfile/install.sh
+    bash dotfiles/install.sh
     
 After this the next time your shell is started you will be using this
 environment. Any files that get replaced will be moved to `~/dotfiles_old` for
