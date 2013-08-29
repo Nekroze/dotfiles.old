@@ -26,9 +26,8 @@ Installation
 This repo contains a simple installer. From a new environment to full setup
 this is all you need to do:
 
-    cd ~/
-    git clone https://github.com/Nekroze/dotfiles.git
-    bash dotfiles/install.sh
+    git clone https://github.com/Nekroze/dotfiles.git ~/dotfiles
+    bash ~/dotfiles/install.sh
     
 After this the next time your shell is started you will be using this
 environment. Any files that get replaced will be moved to `~/dotfiles_old` for
