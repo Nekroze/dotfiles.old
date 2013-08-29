@@ -40,6 +40,60 @@ Once installed you will have your own `~/.bashrc` and `~/.zshrc` that are setup
 to load the settings of this repo but allow you to tack on your own settings to
 these files as well without it interupting this dotfiles repo at all.
 
+Usage
+-----
+
+Some usage examples and tutorials.
+
+ZSH
+~~~
+
+It is highly recomended that you use these dotfiles in concert with the excelent
+*zsh* shell. You can switch your default shell over with this little command:
+
+    $ chsh -s `which zsh`
+    
+Emacs
+~~~~~
+
+These dotfiles come with a nice amount of support for emacs. If emacs is your jam
+or you are undecided I highly recomend it.
+
+You will have a setup to make emacs your default command line text editor but it
+will execute a custom command that makes emacs run in the background for much
+faster loading and run exclusively in the console.
+
+This can be tweaked if you want but give it a go first.
+
+Python Projects
+~~~~~~~~~~~~~~~
+
+If you work with python often you might like the following command for
+creating a skeleton python project with some rather nice accoutrements.
+
+    $ newproj
+    
+Which simply asks you a few questions about you and your project and creates
+a new directory ready for developing top quality python projects.
+
+For more information on the project template this command uses visit 
+https://github.com/Nekroze/cookiecutter-pypackage the template repository.
+
+Maintenance
+-----------
+
+There are some handy commands to keep your environment up to date. If you use
+zsh then oh-my-zsh will automatically check for updates. You can update your
+dotfiles at any time by calling:
+
+    $ dotupdate
+    
+You can also update all git repositories (pull them from their remotes) in
+the `~/git/` directory. If you do store you repositories there that is. To
+perform a pull on each repo simply call:
+
+    $ pullall
+
 Features
 --------
 
