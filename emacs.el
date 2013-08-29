@@ -165,3 +165,6 @@ suitable for creation"
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
   (setq ac-comphist-file  "~/.emacs.d/ac-comphist.dat")
   (ac-config-default))
+
+;; Set theme
+(load-theme 'solarized-dark t)
