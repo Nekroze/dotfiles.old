@@ -5,3 +5,5 @@ export RPYTHON="PYTHONPATH=~/src/pypy:$PYTHONPATH pypy $RPTRANSLATE"
 ## Editor
 export EDITOR=~/dotfiles/emacsclient.sh
 export VISUAL=$EDITOR
+## Terminal
+export TERM=xterm-256color
