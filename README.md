@@ -45,16 +45,14 @@ Usage
 
 Some usage examples and tutorials.
 
-ZSH
-~~~
+### ZSH
 
 It is highly recomended that you use these dotfiles in concert with the excelent
 *zsh* shell. You can switch your default shell over with this little command:
 
     $ chsh -s `which zsh`
     
-Emacs
-~~~~~
+### Emacs
 
 These dotfiles come with a nice amount of support for emacs. If emacs is your jam
 or you are undecided I highly recomend it.
@@ -65,8 +63,7 @@ faster loading and run exclusively in the console.
 
 This can be tweaked if you want but give it a go first.
 
-Python Projects
-~~~~~~~~~~~~~~~
+### Python Projects
 
 If you work with python often you might like the following command for
 creating a skeleton python project with some rather nice accoutrements.
