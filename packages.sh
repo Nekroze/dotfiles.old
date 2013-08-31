@@ -13,13 +13,6 @@ read PACKER
 if [[ -z $PACKER ]]; then exit 2; fi
 
 exec $PACKER $PROGRAMS
-echo
-echo "Installing Python Packages"
-echo "Do you need to use sudo to install things?"
-select yn in "Yes" "No" "Skip"; do
-    case $yn in
-        Yes ) exec sudo pip install $PYPACKAGES; break;;
-        No ) exec pip install $PYPACKAGES; break;;
-        Skip ) break;;
-    esac
-done
+echo 
+echo "Installing python packages"
+exec sudo pip install $PYPACKAGES
