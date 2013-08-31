@@ -1,13 +1,15 @@
 # Functions
 ## Project Management
 pullall() {
-    cd ~/git
-    for dir in */; do
-        echo "\nPulling $dir"
-        cd $dir
-        git pull
-        cd ../
-    done
+    if [ -d ~/git ]; then
+        cd ~/git
+        for dir in */; do
+            echo "\nPulling $dir"
+            cd $dir
+            git pull
+            cd ../
+        done
+    fi
 }
 # Shell Aliases
 alias dotupdate='cd ~/dotfiles && git pull && cd ../'
