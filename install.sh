@@ -47,6 +47,8 @@ echo "Installing zsh config"
 mv -f ~/.zshrc ~/dotfiles_old/
 echo "source ~/dotfiles/zsh.sh
 source ~/dotfiles/shellenv.sh" > ~/.zshrc
+# Fix for history completion in ubuntu/debian
+echo "DEBIAN_PREVENT_KEYBOARD_CHANGES=yes" >> ~/.zshenv
 
 echo "Installing emacs config"
 mv -f ~/.emacs ~/dotfiles_old/

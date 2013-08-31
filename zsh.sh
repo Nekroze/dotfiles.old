@@ -23,6 +23,3 @@ zle -N rationalise-dot
 bindkey . rationalise-dot
 # without this, typing a . aborts incremental history search
 bindkey -M isearch . self-insert
-
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
