@@ -6,11 +6,13 @@ pullall() {
     if [ -d ~/git ]; then
         cd ~/git
         for dir in */; do
-            echo
-            echo "Pulling $dir"
-            cd $dir
-            git pull
-            cd ../
+            if [ -d $dir/.git ]; then
+                echo
+                echo "Pulling $dir"
+                cd $dir
+                git pull
+                cd ../
+            fi
         done
     fi
 }
