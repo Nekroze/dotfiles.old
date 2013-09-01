@@ -5,6 +5,9 @@
 
 (recentf-mode 1)
 
+;;Markdown Mode
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
 ;;Autofill Mode for python
 (setq-default fill-column 79)
 (add-hook 'python-mode-hook 'turn-on-auto-fill)
@@ -17,6 +20,10 @@
 
 ;;Flyspell in ReST mode
 (dolist (hook '(python-mode-hook))
+      (add-hook hook (lambda () (flyspell-mode 1))))
+
+;;Flyspell in Markdown mode
+(dolist (hook '(markdown-mode-hook))
       (add-hook hook (lambda () (flyspell-mode 1))))
 
 ;; easy spell check
