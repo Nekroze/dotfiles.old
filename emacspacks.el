@@ -3,12 +3,11 @@
 			       color-theme-solarized
 			       markdown-mode git-commit
 			       git-commit-mode flycheck flymake
-			       tox auto-complete auto-indent-mode
+			       auto-complete auto-indent-mode
 			       d-mode gitignore-mode highlight
 			       idomenu ido-ubiquitous jinja2-mode
-			       lineno marmalade pep8 pyflakes
-			       pylint pytest python starter-kit
-			       starter-kit-bindings))
+			       lineno marmalade python
+			       starter-kit starter-kit-bindings))
 ; Repositories
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
