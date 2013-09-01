@@ -10,16 +10,16 @@
 
 ;;Autofill Mode for python
 (setq-default fill-column 79)
-(add-hook 'python-mode-hook 'turn-on-auto-fill)
 
-;;Flyspell in python comments
+;Flyspell in python comments
 (add-hook 'python-mode-hook
           (lambda ()
             (flyspell-prog-mode)
+            (auto-fill-mode 1)
           ))
 
 ;;Flyspell in ReST mode
-(dolist (hook '(python-mode-hook))
+(dolist (hook '(rst-mode-hook))
       (add-hook hook (lambda () (flyspell-mode 1))))
 
 ;;Flyspell in Markdown mode
@@ -140,9 +140,6 @@
   (ansi-color-apply-on-region (point-min) (point-max))
   (toggle-read-only))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
-
-;; Flycheck
-(add-hook 'python-mode-hook 'flycheck-mode)
 
 ;; Auto Complete
 (when (require 'auto-complete-config nil 'noerror) ;; don't break if not
