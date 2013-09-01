@@ -7,9 +7,8 @@
 			       gitignore-mode highlight idomenu
 			       ido-ubiquitous jinja2-mode lineno
 			       marmalade pep8 pyflakes pylint
-			       pytest python
-			       solarized-theme starter-kit
-			       starter-kit-bindings))
+			       pytest python monokai-theme
+			       starter-kit starter-kit-bindings))
 ; Repositories
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
