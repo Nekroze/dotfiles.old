@@ -103,3 +103,12 @@ the `~/git/` directory. If you do store you repositories there that is. To
 perform a pull on each repo simply call:
 
     $ pullall
+    
+If you are running a system that uses the ``apt-get`` package manager you can
+use the following command to update all installed packages:
+
+    $ update
+    
+For convenience you can run all of the maintenance commands at once by calling:
+
+    $ fullupdate
