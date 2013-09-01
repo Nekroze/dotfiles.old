@@ -1,10 +1,13 @@
 # Functions
 ## Project Management
 pullall() {
+    echo
+    echo "Updating all git repositories in ~/git"
     if [ -d ~/git ]; then
         cd ~/git
         for dir in */; do
-            echo "\nPulling $dir"
+            echo
+            echo "Pulling $dir"
             cd $dir
             git pull
             cd ../
@@ -13,6 +16,8 @@ pullall() {
 }
 # Shell Aliases
 dotupdate () {
+    echo
+    echo "Updating dotfiles repository"
     cd ~/dotfiles
     git pull
     cd ~/
@@ -38,7 +43,11 @@ alias newproj='cookiecutter https://github.com/Nekroze/cookiecutter-pypackage.gi
 ## Package Management
 alias aptin='sudo apt-get install'
 update () {
+    echo 
+    echo "Updating package lists"
     sudo apt-get update
+    echo
+    echo "Updating packages"
     sudo apt-get upgrade -y
 }
 fullupdate () {
