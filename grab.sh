@@ -10,4 +10,4 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/Nekroze/dotfile
   exit
 }
 
-/usr/bin/env bash ~/dotfiles/install.sh
+QUITE=TRUE /usr/bin/env bash ~/dotfiles/install.sh
