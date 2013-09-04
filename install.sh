@@ -56,8 +56,8 @@ echo "(load-file \"~/dotfiles/emacs.el\")" > ~/.emacs
 
 ########## Optional extras
 if [ $QUITE = TRUE ]; then
-    bash ~/dotfiles/gitsetup.sh
-    bash ~/dotfiles/emacs.sh
+    QUITE=$QUITE bash ~/dotfiles/gitsetup.sh
+    QUITE=$QUITE bash ~/dotfiles/emacs.sh
 else
     echo
     echo "Do you wish to apply some useful global git configs?"
