@@ -55,33 +55,37 @@ mv -f ~/.emacs ~/dotfiles_old/
 echo "(load-file \"~/dotfiles/emacs.el\")" > ~/.emacs
 
 ########## Optional extras
+if [ $QUITE = TRUE ]; then
+    bash ~/dotfiles/gitsetup.sh
+    bash ~/dotfiles/emacs.sh
+else
+    echo
+    echo "Do you wish to apply some useful global git configs?"
+    select yn in "Yes" "No"; do
+        case $yn in
+            Yes ) bash ~/dotfiles/gitsetup.sh; break;;
+            No ) break;;
+        esac
+    done
 
-echo
-echo "Do you wish to apply some useful global git configs?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) sh ~/dotfiles/gitsetup.sh; break;;
-        No ) break;;
-    esac
-done
+    echo
+    echo "Do you wish to install some useful packages?"
+    select yn in "Yes" "No"; do
+        case $yn in
+            Yes ) bash ~/dotfiles/packages.sh; break;;
+            No ) break;;
+        esac
+    done
 
-echo
-echo "Do you wish to install some useful packages?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) sh ~/dotfiles/packages.sh; break;;
-        No ) break;;
-    esac
-done
-
-echo
-echo "Do you wish to install some useful emacs plugins?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) sh ~/dotfiles/emacs.sh; break;;
-        No ) break;;
-    esac
-done
+    echo
+    echo "Do you wish to install some useful emacs plugins?"
+    select yn in "Yes" "No"; do
+        case $yn in
+            Yes ) bash ~/dotfiles/emacs.sh; break;;
+            No ) break;;
+        esac
+    done
+fi
 
 ########## Exit
 
