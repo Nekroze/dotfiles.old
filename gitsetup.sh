@@ -5,7 +5,7 @@
 # and can clone all of your repositories from github.
 ############################
 
-if [ $QUITE != TRUE ]; then
+if [ "$QUITE" != "TRUE" ]; then
     echo "\nWhat is your name?"
     read NAME
     echo "What is your email address?"

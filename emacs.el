@@ -129,10 +129,6 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-font-lock-mode 1)
 
-;; Find nearest/parent makefile and get targets
-(require 'makefile-runner)
-(global-set-key (kbd "<f7>") 'makefile-runner)
-
 ;; colorize compilation buffer
 (require 'ansi-color)
 (defun colorize-compilation-buffer ()
