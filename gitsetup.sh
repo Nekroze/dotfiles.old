@@ -6,7 +6,8 @@
 ############################
 
 if [ "$QUITE" != "TRUE" ]; then
-    echo "\nWhat is your name?"
+    echo
+    echo "What is your name?"
     read NAME
     echo "What is your email address?"
     read EMAIL

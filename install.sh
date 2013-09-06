@@ -57,6 +57,7 @@ echo "(load-file \"~/dotfiles/emacs.el\")" > ~/.emacs
 ########## Optional extras
 if [ "$QUITE" = "TRUE" ]; then
     QUITE=$QUITE bash $dir/gitsetup.sh
+    QUITE=$QUITE bash $dir/packages.sh
     QUITE=$QUITE bash $dir/emacs.sh
 else
     echo
