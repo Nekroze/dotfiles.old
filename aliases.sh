@@ -43,14 +43,15 @@ alias clean='find ./ -iname "*.pyc" -exec rm {} \; && find ./ -iname "#*" -exec 
 ## Project Management
 alias newproj='cookiecutter https://github.com/Nekroze/cookiecutter-pypackage.git'
 ## Package Management
-alias aptin='sudo apt-get install'
 update () {
-    echo 
-    echo "Updating package lists"
-    sudo apt-get update
-    echo
-    echo "Updating packages"
-    sudo apt-get upgrade -y
+    if hash apt-get >/dev/null; then
+        exec sudo apt-get update
+        exec sudo apt-get upgrade -y
+    elif hash packer >/dev/null; then
+        exec sudo packer -Syu --no-edit --no-confirm
+    elif hash pacman >/dev/null; then
+        exec sudo pacman -Syu
+    fi
 }
 fullupdate () {
     update
