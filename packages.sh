@@ -9,21 +9,24 @@ PYPACKAGES="cookiecutter flake8"
 echo
 echo "Installing Software Packages"
 
-if hash apt-get 2>/dev/null; then
-    PACKER=apt-get install
-elif hash packer 2>/dev/null; then
-    PACKER=packer -S --no-edit
-elif hash pacman 2>/dev/null; then
-    PACKER=pacman -S
-else
+if hash apt-get >/dev/null; then
+    echo "apt-get detected"
+    PACKER="apt-get install"
+elif hash packer >/dev/null; then
+    echo "packer detected"
+    PACKER="packer -S --no-edit"
+elif hash pacman >/dev/null; then
+    echo "pacman detected"
+    PACKER="pacman -S"
+elif [ "$QUITE" != "TRUE" ]; then    
     echo "What command do you use to install packages? Including options?"
     read PACKER
-    if hash $PACKER 2>/dev/null; then
+    if hash $PACKER >/dev/null; then
         exit 2;
     fi
 fi
 
-if hash sudo 2>/dev/null; then
+if hash sudo >/dev/null; then
     exec sudo $PACKER $PROGRAMS
 else
     exec sudo $PACKER $PROGRAMS
@@ -31,7 +34,8 @@ fi
 
 echo 
 echo "Installing python packages"
-if hash sudo 2>/dev/null; then
+if hash sudo >/dev/null; then
+    echo "sudo detected"
     exec sudo pip install $PYPACKAGES
 else
     exec pip install $PYPACKAGES
