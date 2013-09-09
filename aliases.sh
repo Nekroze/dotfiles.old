@@ -45,12 +45,12 @@ alias newproj='cookiecutter https://github.com/Nekroze/cookiecutter-pypackage.gi
 ## Package Management
 update () {
     if hash apt-get >/dev/null; then
-        exec sudo apt-get update
-        exec sudo apt-get upgrade -y
+        sudo apt-get update
+        sudo apt-get upgrade -y
     elif hash packer >/dev/null; then
-        exec sudo packer -Syu --no-edit --no-confirm
+        sudo packer -Syu --no-edit --no-confirm
     elif hash pacman >/dev/null; then
-        exec sudo pacman -Syu
+        sudo pacman -Syu
     fi
 }
 fullupdate () {

@@ -33,9 +33,9 @@ if [ "$PACKER" != "NONE" ]; then
     echo
     echo "Installing Software Packages"
     if hash sudo >/dev/null; then
-        exec sudo $PACKER $PROGRAMS
+        sudo $PACKER $PROGRAMS
     else
-        exec sudo $PACKER $PROGRAMS
+        sudo $PACKER $PROGRAMS
     fi
 fi
 
@@ -44,9 +44,9 @@ if hash pip >/dev/null; then
     echo "Installing python packages"
     if hash sudo >/dev/null; then
         echo "sudo detected"
-        exec sudo pip install $PYPACKAGES
+        sudo pip install $PYPACKAGES
     else
-        exec pip install $PYPACKAGES
+        pip install $PYPACKAGES
     fi
 else
     echo
