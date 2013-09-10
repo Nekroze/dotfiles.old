@@ -92,11 +92,14 @@
 (global-set-key "\C-l" 'goto-line)
 
 ;; cmodes
+(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
 (defun stroustrup-common-hook ()
      (c-set-style "cc-mode")
      (setq tab-width 4 indent-tabs-mode nil)
 )
 (add-hook 'c-mode-common-hook 'stroustrup-common-hook)
+;;; C programming style
+(setq c-default-style "stroustrup" c-basic-offset 4)
 
 ;; run script
 (defun python-run ()
