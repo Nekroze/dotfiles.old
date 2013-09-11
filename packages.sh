@@ -4,8 +4,8 @@
 # This script installs some handy programs
 ############################
 
-PROGRAMS="emacs24 terminator zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest python-dev pyflakes pep8 pylint python-tox"
-PYPACKAGES="cookiecutter flake8"
+PROGRAMS="emacs24 terminator zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest python-dev pyflakes pep8 pylint python-tox python-cython"
+PYPACKAGES="cookiecutter flake8 twisted"
 
 if hash apt-get >/dev/null; then
     echo "apt-get detected"
