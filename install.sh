@@ -40,7 +40,7 @@ cp -r $dir/config/terminator ~/.config/
 
 echo "Installing Xresourcees solarized settings"
 mv -f ~/.Xresources $olddir/.Xresources
-cat $dit/Xresources >> ~/.Xresources
+cat $dir/Xresources >> ~/.Xresources
 
 echo "Installing bash config"
 mv -f ~/.bashrc $olddir
