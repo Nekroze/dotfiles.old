@@ -4,18 +4,21 @@
 # This script installs some handy programs
 ############################
 
-PROGRAMS="emacs24 terminator zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest python-dev pyflakes pep8 pylint python-tox python-cython"
-PYPACKAGES="cookiecutter flake8 twisted"
+PROGRAMS="emacs24 zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest python-dev pyflakes pep8 pylint python-tox python-cython"
+PYPACKAGES="cookiecutter"
 
 if hash apt-get >/dev/null; then
     echo "apt-get detected"
     PACKER="apt-get install -y"
+    PROGRAMS="emacs24 zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest python-dev pyflakes pep8 pylint python-tox python-cython"
 elif hash packer >/dev/null; then
     echo "packer detected"
-    PACKER="packer -S --no-edit --no-confirm"
+    PACKER="packer -S --noedit --noconfirm"
+    PROGRAMS="emacs zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest flake8 python-pylint python-tox python-cython twisted"
 elif hash pacman >/dev/null; then
     echo "pacman detected"
     PACKER="pacman -S"
+    PROGRAMS="emacs zsh aspell-en mc python python-pip python-setuptools python-sphinx pep8"
 elif [ "$QUITE" != "TRUE" ]; then    
     echo "What command do you use to install packages, ie your package manager command with install options?"
     read PACKER
