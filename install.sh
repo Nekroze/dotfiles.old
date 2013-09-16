@@ -38,6 +38,10 @@ mkdir -p ~/.config $olddir/.config
 mv -f ~/.config/terminator $olddir/.config/terminator
 cp -r $dir/config/terminator ~/.config/
 
+echo "Installing Xresourcees solarized settings"
+mv -f ~/.Xresources $olddir/.Xresources
+cat $dit/Xresources >> ~/.Xresources
+
 echo "Installing bash config"
 mv -f ~/.bashrc $olddir
 echo "source ~/dotfiles/bash.sh
