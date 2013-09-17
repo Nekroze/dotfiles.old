@@ -7,7 +7,8 @@
 			       d-mode gitignore-mode highlight
 			       lineno marmalade python
 			       starter-kit starter-kit-bindings
-			       idomenu ido-ubiquitous jinja2-mode))
+			       idomenu ido-ubiquitous jinja2-mode
+                               lua-mode d-mode))
 ; Repositories
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
