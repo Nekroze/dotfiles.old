@@ -36,20 +36,22 @@ alias lm='ll |more'        #  Pipe through 'more'
 alias lr='ll -R'           #  Recursive ls.
 alias la='ll -A'           #  Show hidden files.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
-## Mis Aliases
-alias rpython=$RPYTHON
+## Misc Aliases
+rpython () {
+    PYTHONPATH=$PYPYSRC:$PYTHONPATH $PYTHONBIN $RPTRANSLATE $@
+}
 alias emacs=$EDITOR
 alias clean='find ./ -iname "*.pyc" -exec rm {} \; && find ./ -iname "#*" -exec rm {} \;'
 ## Project Management
 alias newproj='cookiecutter https://github.com/Nekroze/cookiecutter-pypackage.git'
 ## Package Management
 update () {
-    if hash apt-get >/dev/null; then
+    if hash apt-get 2>/dev/null; then
         sudo apt-get update
         sudo apt-get upgrade -y
-    elif hash packer >/dev/null; then
+    elif hash packer 2>/dev/null; then
         sudo packer -Syu --no-edit --no-confirm
-    elif hash pacman >/dev/null; then
+    elif hash pacman 2>/dev/null; then
         sudo pacman -Syu
     fi
 }
