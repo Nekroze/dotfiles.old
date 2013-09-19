@@ -50,7 +50,7 @@ update () {
         sudo apt-get update
         sudo apt-get upgrade -y
     elif hash packer 2>/dev/null; then
-        sudo packer -Syu --no-edit --no-confirm
+        sudo packer -Syu --noedit --noconfirm
     elif hash pacman 2>/dev/null; then
         sudo pacman -Syu
     fi

@@ -70,5 +70,4 @@
 *color15:                 S_base3
 
 ! Xterm alt key fix
-XTerm*eightBitInput: false
-
+XTerm*metaSendsEscape: true
