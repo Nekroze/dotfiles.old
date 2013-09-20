@@ -45,6 +45,24 @@ alias clean='find ./ -iname "*.pyc" -exec rm {} \; && find ./ -iname "#*" -exec 
 ## Project Management
 alias newproj='cookiecutter https://github.com/Nekroze/cookiecutter-pypackage.git'
 ## Package Management
+pakin () {
+    if hash apt-get 2>/dev/null; then
+        sudo apt-get install $@
+    elif hash packer 2>/dev/null; then
+        sudo packer -S --noedit $@
+    elif hash pacman 2>/dev/null; then
+        sudo pacman -S $@
+    fi
+}
+paksee () {
+    if hash apt-get 2>/dev/null; then
+        apt-cache search $@
+    elif hash packer 2>/dev/null; then
+        packer -Ss $@
+    elif hash pacman 2>/dev/null; then
+        pacman -Ss $@
+    fi
+}
 update () {
     if hash apt-get 2>/dev/null; then
         sudo apt-get update
