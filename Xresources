@@ -69,5 +69,22 @@
 *color14:                 S_base1
 *color15:                 S_base3
 
+! urxvt solarized
+URxvt*buffered: true
+URxvt*cursorBlink: true
+URxvt*underlineColor: yellow
+URxvt*depth: 32
+URxvt*borderless: 1
+URxvt*scrollBar: false
+URxvt*loginShell: true
+Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
+URxvt*saveLines: 5000
+URxvt*termName: rxvt-unicode
+URxvt.perl-ext-common: default,matcher
+URxvt.matcher.button: 1
+
 ! Xterm alt key fix
 XTerm*metaSendsEscape: true
+
+!Alter xterm font size
+xterm*font:     *-mono-*-*-*-12~-*
