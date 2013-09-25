@@ -54,6 +54,13 @@ pakin () {
         sudo pacman -S $@
     fi
 }
+pakout () {
+    if hash apt-get 2>/dev/null; then
+        sudo apt-get remove $@
+    elif hash pacman 2>/dev/null; then
+        sudo pacman -Rns $@
+    fi
+}
 paksee () {
     if hash apt-get 2>/dev/null; then
         apt-cache search $@
