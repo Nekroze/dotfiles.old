@@ -48,6 +48,8 @@ alias newproj='cookiecutter https://github.com/Nekroze/cookiecutter-pypackage.gi
 pakin () {
     if hash apt-get 2>/dev/null; then
         sudo apt-get install $@
+    elif hash yaourt 2>/dev/null; then
+        yaourt $@
     elif hash packer 2>/dev/null; then
         sudo packer -S --noedit $@
     elif hash pacman 2>/dev/null; then
@@ -64,6 +66,8 @@ pakout () {
 paksee () {
     if hash apt-get 2>/dev/null; then
         apt-cache search $@
+    elif hash yaourt 2>/dev/null; then
+        yaourt $@
     elif hash packer 2>/dev/null; then
         packer -Ss $@
     elif hash pacman 2>/dev/null; then
@@ -74,6 +78,8 @@ update () {
     if hash apt-get 2>/dev/null; then
         sudo apt-get update
         sudo apt-get upgrade -y
+    elif hash yaourt 2>/dev/null; then
+        yaourt -Syua --devel
     elif hash packer 2>/dev/null; then
         sudo packer -Syu --noedit --noconfirm
     elif hash pacman 2>/dev/null; then
