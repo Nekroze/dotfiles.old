@@ -67,7 +67,7 @@ paksee () {
     if hash apt-get 2>/dev/null; then
         apt-cache search $@
     elif hash yaourt 2>/dev/null; then
-        yaourt $@
+        yaourt -Ss $@
     elif hash packer 2>/dev/null; then
         packer -Ss $@
     elif hash pacman 2>/dev/null; then
