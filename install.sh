@@ -33,14 +33,16 @@ fi
 
 ########## Copy files
 
-echo "Installing terminator config"
+echo "Installing solarized configs"
 mkdir -p ~/.config $olddir/.config
 mv -f ~/.config/terminator $olddir/.config/terminator
 cp -r $dir/config/terminator ~/.config/
-
-echo "Installing Xresourcees solarized settings"
 mv -f ~/.Xresources $olddir/.Xresources
 cat $dir/Xresources >> ~/.Xresources
+mv -f ~/.Xdefaults $olddir/.Xdefaults
+cat $dir/Xdefaults >> ~/.Xdefaults
+mv -f ~/.minttyrc $olddir/.minttyrc
+cat $dir/minttyrc >> ~/.minttyrc
 
 echo "Installing bash config"
 mv -f ~/.bashrc $olddir
