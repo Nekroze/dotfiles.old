@@ -86,5 +86,11 @@ URxvt.matcher.button: 1
 ! Xterm alt key fix
 XTerm*metaSendsEscape: true
 
-!Alter xterm font size
+! Alter xterm font size
 xterm*font:     *-mono-*-*-*-12~-*
+
+! Xterm utf-8 support
+XTerm*locale: true
+
+! Xterm bell urgency
+xterm*bellIsUrgent: true
