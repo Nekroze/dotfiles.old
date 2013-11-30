@@ -1,13 +1,13 @@
 ; Package list
-(setq package-list '(marmalade makefile-runner org
-			       color-theme-solarized
-			       markdown-mode git-commit
-			       git-commit-mode flycheck flymake
-			       auto-complete auto-indent-mode
-			       d-mode gitignore-mode highlight
-			       lineno marmalade python
-			       starter-kit starter-kit-bindings
-			       idomenu ido-ubiquitous jinja2-mode
+(setq package-list '(marmalade makefile-runner org color-theme
+                               color-theme-solarized
+                               markdown-mode git-commit
+                               git-commit-mode flycheck flymake
+                               auto-complete auto-indent-mode
+                               d-mode gitignore-mode highlight
+                               lineno marmalade python
+                               starter-kit starter-kit-bindings
+                               idomenu ido-ubiquitous jinja2-mode
                                lua-mode d-mode))
 ; Repositories
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
