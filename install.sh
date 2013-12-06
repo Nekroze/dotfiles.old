@@ -28,14 +28,19 @@ if [[ ! -d $dir/oh-my-zsh/ ]]; then
     git clone https://github.com/robbyrussell/oh-my-zsh.git
     cp -f eturnilnetwork.zsh-theme oh-my-zsh/custom/
     mkdir oh-my-zsh/custom/plugins
-    cd oh-my-zsh/custom/plugins
-    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-    cd ../
-    git clone git://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git
-    ln -s oh-my-zsh-powerline-theme/powerline.zsh-theme ./
-    cd ../../
+    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git oh-my-zsh/custom/plugins/zsh-synta-hightlighting
+    git clone git://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git oh-my-zsh/custom/oh-my-zsh-powerline-theme
+    ln -s oh-my-zsh/custom/oh-my-zsh-powerline-theme/powerline.zsh-theme oh-my-zsh/custom/
     mv -f ~/.oh-my-zsh $olddir
     mv oh-my-zsh ~/.oh-my-zsh
+fi
+
+
+# Clone oh-my-zsh repository from GitHub only if it isn't already present
+if [[ ! -d ~/.fonts/powerline-fonts/ ]]; then
+    echo "Installing powerline enabled fonts"
+    mkdir -p ~/.fonts
+    git clone https://github.com/Lokaltog/powerline-fonts.git ~/.fonts/powerline-fonts
 fi
 
 ########## Copy files
