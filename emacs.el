@@ -7,7 +7,7 @@
 
 ;; Font
 (set-face-attribute 'default nil :height 100)
-;(set-face-attribute 'default nil :font "Source Code Pro for Powerline-10")
+(add-to-list 'default-frame-alist '(font . "Source Code Pro for Powerline-10"))
 
 ;; Powerline Status
 (add-to-list 'load-path "~/.emacs.d/powerline")
