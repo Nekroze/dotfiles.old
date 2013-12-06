@@ -34,3 +34,5 @@ bindkey -M isearch . self-insert
 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
+
+. ~/dotfiles/powerline/powerline/bindings/zsh/powerline.zsh

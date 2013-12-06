@@ -47,6 +47,14 @@ if [[ ! -d ~/.themes/solarized-dark-gtk/ ]]; then
     git clone https://github.com/jankotek/solarized-dark-gtk.git ~/.themes/solarized-dark-gtk/
 fi
 
+if [[ ! -d $dir/powerline/ ]]; then
+    echo "Installing powerline"
+    git clone https://github.com/Lokaltog/powerline.git
+    cd powerline
+    python setup.py install --user
+    cd ../
+fi
+
 ########## Copy files
 
 echo "Installing solarized configs"
