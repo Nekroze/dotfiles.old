@@ -1,7 +1,15 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="eturnilnetwork"
+#POWERLINE_SHOW_GIT_ON_RIGHT="true"
+POWERLINE_NO_BLANK_LINE="true"
+POWERLINE_HIDE_HOST_NAME="true"
+POWERLINE_HIDE_USER_NAME="true"
+POWERLINE_RIGHT_A="mixed"
+POWERLINE_RIGHT_B=%D{%H:%M}
+POWERLINE_DATE_FORMAT="%D{%d-%m}"
+POWERLINE_DETECT_SSH="true"
+ZSH_THEME="powerline"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git gitfast pip)
+plugins=(git gitfast git-extras pip python debian zsh-syntax-highlight)
 
 
 source $ZSH/oh-my-zsh.sh

@@ -27,6 +27,13 @@ if [[ ! -d $dir/oh-my-zsh/ ]]; then
     echo "Installing oh-my-zsh with custom theme"
     git clone https://github.com/robbyrussell/oh-my-zsh.git
     cp -f eturnilnetwork.zsh-theme oh-my-zsh/custom/
+    mkdir oh-my-zsh/custom/plugins
+    cd oh-my-zsh/custom/plugins
+    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+    cd ../
+    git clone git://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git
+    ln -s oh-my-zsh-powerline-theme/powerline.zsh-theme ./
+    cd ../../
     mv -f ~/.oh-my-zsh $olddir
     mv oh-my-zsh ~/.oh-my-zsh
 fi
