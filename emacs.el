@@ -148,6 +148,9 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-font-lock-mode 1)
 
+;; Remove hl line mode from starter kit
+(remove-hook 'coding-hook 'turn-on-hl-line-mode)
+
 ;; colorize compilation buffer
 (require 'ansi-color)
 (defun colorize-compilation-buffer ()
