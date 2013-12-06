@@ -35,12 +35,16 @@ if [[ ! -d $dir/oh-my-zsh/ ]]; then
     mv oh-my-zsh ~/.oh-my-zsh
 fi
 
-
-# Clone oh-my-zsh repository from GitHub only if it isn't already present
 if [[ ! -d ~/.fonts/powerline-fonts/ ]]; then
     echo "Installing powerline enabled fonts"
     mkdir -p ~/.fonts
     git clone https://github.com/Lokaltog/powerline-fonts.git ~/.fonts/powerline-fonts
+fi
+
+if [[ ! -d ~/.themes/solarized-dark-gtk/ ]]; then
+    echo "Installing solarized GTK2/3 theme"
+    mkdir -p ~/.themes
+    git clone https://github.com/jankotek/solarized-dark-gtk.git ~/.themes/solarized-dark-gtk/
 fi
 
 ########## Copy files
