@@ -5,6 +5,21 @@
 
 (recentf-mode 1)
 
+;; Font
+(set-face-attribute 'default nil :height 100)
+;(set-face-attribute 'default nil :font "Source Code Pro for Powerline-10")
+
+;; Powerline Status
+(add-to-list 'load-path "~/.emacs.d/powerline")
+(require 'powerline)
+(powerline-default-theme)
+
+;; Change Keybinds
+; Makes keeping emacs open for longer periods easier
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+(global-set-key (kbd "C-x C-k") 'save-buffers-kill-emacs)
+(global-set-key (kbd "C-x C-c") 'kill-this-buffer)
+
 ;;Markdown Mode
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
