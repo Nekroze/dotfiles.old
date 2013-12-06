@@ -73,7 +73,7 @@
 (setq scroll-conservatively 1)
 
 ;;Support Wheel Mouse Scrolling
-;(mouse-wheel-mode t)
+(mouse-wheel-mode t)
 
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
