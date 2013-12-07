@@ -1,4 +1,6 @@
 # Exports
+## Local Bin
+PATH=~/.local/bin:$PATH
 ## Rpython Compiler
 export RPTRANSLATE=~/src/pypy/pypy/translator/goal/translate.py
 export PYPYSRC=~/src/pypy

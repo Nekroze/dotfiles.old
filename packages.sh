@@ -4,8 +4,7 @@
 # This script installs some handy programs
 ############################
 
-PROGRAMS
-="emacs24 zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest python-dev pyflakes pep8 pylint python-tox python-cython"
+PROGRAMS="emacs24 zsh aspell-en mc python python-pip python-setuptools python-tox python-sphinx python-pytest python-dev pyflakes pep8 pylint python-tox python-cython"
 PYPACKAGES="cookiecutter"
 
 if hash apt-get 2>/dev/null; then

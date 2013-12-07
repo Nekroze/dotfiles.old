@@ -57,7 +57,7 @@ if [[ ! -d $dir/powerline/ ]]; then
     cd $dir/powerline
     python setup.py install --user
     cd $dir
-
+fi
 
 ########## Copy files
 
@@ -131,3 +131,4 @@ fi
 echo
 echo "Installation completed"
 echo "Solong and thanks for all the fish!"
+
