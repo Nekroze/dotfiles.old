@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="eturnilnetwork"
+ZSH_THEME="powerline"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git gitfast git-extras pip python debian zsh-syntax-highlight)
+plugins=(git gitfast git-extras pip python zsh-syntax-highlight)
 
 
 source $ZSH/oh-my-zsh.sh
