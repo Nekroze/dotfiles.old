@@ -5,6 +5,9 @@
 
 (recentf-mode 1)
 
+;; Remove scratch buffer message
+(setq initial-scratch-message "")
+
 ;; Font
 (set-face-attribute 'default nil :height 100)
 (add-to-list 'default-frame-alist '(font . "Source Code Pro for Powerline-10"))
