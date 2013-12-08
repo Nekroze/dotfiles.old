@@ -5,11 +5,10 @@
                                git-commit-mode gitconfig
                                gitignore-mode flycheck flymake
                                auto-complete auto-indent-mode
-                               d-mode gitignore-mode highlight
                                lineno marmalade python
                                starter-kit starter-kit-bindings
-                               idomenu ido-ubiquitous jinja2-mode
-                               lua-mode flymake-lua d-mode))
+                               idomenu ido-ubiquitous lua-mode
+                               flymake-lua d-mode flymake-d))
 ; Repositories
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
@@ -26,5 +25,6 @@
 ; Install missing packages
 (dolist (package package-list)
   (when (not (package-installed-p package))
-    (package-install package))
+    (package-install package)
+    (print package))
 )
