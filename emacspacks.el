@@ -25,6 +25,5 @@
 ; Install missing packages
 (dolist (package package-list)
   (when (not (package-installed-p package))
-    (package-install package)
-    (print package))
+    (package-install package))
 )
