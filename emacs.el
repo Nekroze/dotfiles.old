@@ -32,10 +32,15 @@
 
 ;;Autofill Mode for python
 (setq-default fill-column 79)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (set-fill-column 100)
+          ))
 
 ;Flyspell in python comments
 (add-hook 'python-mode-hook
           (lambda ()
+            (set-fill-column 79)
             (flyspell-prog-mode)
             (auto-fill-mode 1)
           ))

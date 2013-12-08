@@ -59,6 +59,8 @@ pakin () {
 pakout () {
     if hash apt-get 2>/dev/null; then
         sudo apt-get remove $@
+    elif hash yaourt 2>/dev/null; then
+        yaourt -Rns $@
     elif hash pacman 2>/dev/null; then
         sudo pacman -Rns $@
     fi
