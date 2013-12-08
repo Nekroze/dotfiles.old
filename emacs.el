@@ -5,6 +5,9 @@
 
 (recentf-mode 1)
 
+;; Change scratch buffer default mode
+(setq initial-major-mode 'org-mode)
+
 ;; Remove scratch buffer message
 (setq initial-scratch-message "")
 
