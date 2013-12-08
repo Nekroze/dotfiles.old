@@ -30,8 +30,6 @@ if [[ ! -d $dir/oh-my-zsh/ ]]; then
     cp -f $dir/eturnilnetwork.zsh-theme $dir/oh-my-zsh/custom/
     mkdir $dir/oh-my-zsh/custom/plugins
     git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $dir/oh-my-zsh/custom/plugins/zsh-synta-hightlighting
-    git clone git://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git $dir/oh-my-zsh/custom/oh-my-zsh-powerline-theme
-    ln -s oh-my-zsh/custom/oh-my-zsh-powerline-theme/powerline.zsh-theme $dir/oh-my-zsh/custom/
     mv -f ~/.oh-my-zsh $olddir
     mv $dir/oh-my-zsh ~/.oh-my-zsh
 fi
@@ -48,27 +46,12 @@ if [[ ! -d ~/.themes/solarized-dark-gtk/ ]]; then
     git clone https://github.com/jankotek/solarized-dark-gtk.git ~/.themes/solarized-dark-gtk/
 fi
 
-if [[ ! -d $dir/powerline/ ]]; then
-    echo "Installing powerline"
-    cd $dir
-    git clone https://github.com/Lokaltog/powerline.git
-    mkdir -p ~/.config/powerline
-    cp -r $dir/powerline/powerline/config_files/* ~/.config/powerline/
-    cd $dir/powerline
-    python setup.py install --user
-    cd $dir
-fi
-
 ########## Copy files
 
 echo "Installing solarized and misc configs"
 mkdir -p ~/.config $olddir/.config
 mv -f ~/.config/terminator $olddir/.config/terminator
 cp -r $dir/config/terminator ~/.config/
-mv -f ~/.config/powerline $olddir/.config/powerline
-mkdir -p ~/.config/powerline
-cp -r $dir/powerline/powerline/config_files/* ~/.config/powerline/
-cp -r $dir/config/powerline ~/.config/
 mv -f ~/.Xresources $olddir/.Xresources
 cat $dir/Xresources >> ~/.Xresources
 mv -f ~/.Xdefaults $olddir/.Xdefaults

@@ -1,5 +1,5 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="powerline"
+ZSH_THEME="eturnilnetwork"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git gitfast git-extras pip python zsh-syntax-highlight)
 
@@ -26,5 +26,3 @@ bindkey -M isearch . self-insert
 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
-
-. ~/dotfiles/powerline/powerline/bindings/zsh/powerline.zsh
