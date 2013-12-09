@@ -1,6 +1,6 @@
 ; Package list
 (setq package-list '(marmalade makefile-runner org color-theme
-                               zenburn-theme markdown-mode
+                               ample-zen-theme markdown-mode
                                git-commit git-commit-mode
                                gitconfig gitignore-mode flycheck
                                flymake auto-complete

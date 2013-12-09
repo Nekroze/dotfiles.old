@@ -177,4 +177,4 @@
   (ac-config-default))
 
 ;; Set theme
-(load-theme 'zenburn t)
+(load-theme 'ample-zen t)
