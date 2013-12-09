@@ -17,7 +17,7 @@ fi
 git config --global --add color.ui true
 git config --global push.default tracking
 git config --global core.whitespace trailing-space,space-before-tab
-git config --global core.editor 'emacsclient -a "emacsclient -c -a """'
+git config --global core.editor 'emacsclient -a "nano"'
 git config --global diff.renames copies
 git config --global diff.mnemonicprefix true
 git config --global branch.autosetupmerge true

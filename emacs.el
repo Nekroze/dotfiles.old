@@ -13,7 +13,6 @@
 
 ;; Font
 (set-face-attribute 'default nil :height 100)
-(add-to-list 'default-frame-alist '(font . "Source Code Pro for Powerline-10"))
 
 ;; Powerline Status
 (add-to-list 'load-path "~/.emacs.d/powerline")
@@ -178,4 +177,4 @@
   (ac-config-default))
 
 ;; Set theme
-(load-theme 'solarized-dark t)
+(load-theme 'zenburn t)

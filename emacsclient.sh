@@ -3,7 +3,7 @@
 xprop -name emacs >/dev/null 2>/dev/null
 if [ "$?" = "1" ]; then
 	echo "Opening New Frame"
-	emacsclient --alternate-editor="" -c -n "$@"
+	emacsclient -a "" -c -n -F "((fullscreen . maximized))" "$@"
 else
 	echo "Using Existing Frame"
 	emacsclient -n "$@"
