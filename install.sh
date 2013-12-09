@@ -34,30 +34,7 @@ if [[ ! -d $dir/oh-my-zsh/ ]]; then
     mv $dir/oh-my-zsh ~/.oh-my-zsh
 fi
 
-if [[ ! -d ~/.fonts/powerline-fonts/ ]]; then
-    echo "Installing powerline enabled fonts"
-    mkdir -p ~/.fonts
-    git clone https://github.com/Lokaltog/powerline-fonts.git ~/.fonts/powerline-fonts
-fi
-
-if [[ ! -d ~/.themes/solarized-dark-gtk/ ]]; then
-    echo "Installing solarized GTK2/3 theme"
-    mkdir -p ~/.themes
-    git clone https://github.com/jankotek/solarized-dark-gtk.git ~/.themes/solarized-dark-gtk/
-fi
-
 ########## Copy files
-
-echo "Installing solarized and misc configs"
-mkdir -p ~/.config $olddir/.config
-mv -f ~/.config/terminator $olddir/.config/terminator
-cp -r $dir/config/terminator ~/.config/
-mv -f ~/.Xresources $olddir/.Xresources
-cat $dir/Xresources >> ~/.Xresources
-mv -f ~/.Xdefaults $olddir/.Xdefaults
-cat $dir/Xdefaults >> ~/.Xdefaults
-mv -f ~/.minttyrc $olddir/.minttyrc
-cat $dir/minttyrc >> ~/.minttyrc
 
 echo "Installing bash config"
 mv -f ~/.bashrc $olddir
