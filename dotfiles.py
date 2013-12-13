@@ -90,11 +90,12 @@ def main(args):
     """
     Main entry point.
 
-    Collects filenames matching "./scripts/*.sh" assuming "./" is the dotfiles
-    repo.
+    Collects module install scripts by looking for an "install.sh" file in any
+    directory under "./modules/" assuming "./" is the dotfiles repo. As a glob
+    pattern this search is represented as "./modules/*/install.sh"
 
-    For each script that is collected its description are loaded name is
-    displayed.
+    For each script that is collected its descriptions are loaded and its name
+    is displayed.
 
     If no arguments are given to this script then the user will be questioned
     before running each script after being given its long description.
@@ -105,7 +106,7 @@ def main(args):
     Providing an invalid name argument will simply display all
     available script names.
     """
-    scripts = glob(path.join(environ["DOTFILES"], "scripts", "*", "*.dsh"))
+    scripts = glob(path.join(environ["DOTFILES"], "modules", "*", "install.sh"))
     for script in scripts:
         short, desc = read_description(script)
         print("c[] {0}".format(short))
