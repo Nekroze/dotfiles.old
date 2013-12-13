@@ -24,14 +24,14 @@ def ask_perform(description, commands):
     """
     print(description)
     answer = raw_input("\n[Y/n]>")
-    if not answer or (isinstance(answer, str) and answer.lower() in ("y", "yes")):
+    if not answer or answer.lower() in ("y", "yes")):
         perform(commands)
 
 
 def perform(commands):
     """
     Executes the given commands each on the shell. Commands may be provided as
-    a list of strings or a single string which will be split into a list of 
+    a list of strings or a single string which will be split into a list of
     strings for each line.
     """
     if isinstance(commands, str):
