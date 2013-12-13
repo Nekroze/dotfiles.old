@@ -2,7 +2,7 @@
 # -*- mode: python; coding: utf-8 -*-
 from __future__ import print_function
 __doc__ = """Installation script for Nekroze's dotfiles package."""
-from subprocess import call
+from subprocess import check_call
 from os import path, environ
 from glob import glob
 
@@ -13,7 +13,7 @@ except NameError:
     raw_input = input
 
 
-environ["DOTFILES"] = os.path.dirname(os.path.realpath(__file__))
+environ["DOTFILES"] = path.dirname(path.realpath(__file__))
 
 
 def ask_perform(description, commands):
@@ -23,7 +23,7 @@ def ask_perform(description, commands):
     will be considered a yes.
     """
     print(description)
-    answer = raw_input("[Y/n]>")
+    answer = raw_input("\n[Y/n]>")
     if not answer or (isinstance(answer, str) and answer.lower() in ("y", "yes")):
         perform(commands)
 
@@ -68,20 +68,20 @@ def read_description(filename):
     description = []
     short = ""
     with open(filename, 'r') as f:
-         for line in f:
-             if line == "#"*5:
-                 if not found:
-                     short = line[5:].strip().split()
-                     short = short[0] if short else ""
-                     found = True
-                 else:
-                     break
-             elif found and line:
-                 description.append(line[1:].strip())
-    else:
-        print("<<<<<ERROR>>>>>")
-        print("No description section found in {0}!".format(filename))
-        exit()
+        for line in f:
+            if line[:5] == "#"*5:
+                if not found:
+                    short = line[5:].strip().split()
+                    short = short[0] if short else ""
+                    found = True
+                else:
+                    break
+            elif found and line:
+                description.append(line[1:].strip())
+        else:
+            print("<<<<<ERROR>>>>>")
+            print("No description section found in {0}!".format(filename))
+            exit()
     return (short, "\n".join(description))
 
 
@@ -90,11 +90,12 @@ def main(args):
     scripts = glob(path.join(environ["DOTFILES"], "scripts", "*.sh"))
     for script in scripts:
         short, desc = read_description(script)
-        print("c[] {1}".format(short))
+        print("c[] {0}".format(short))
         if args and short in args:
             perform(script)
         else:
             ask_perform(desc, script)
+        print()
     return 0
 
 
