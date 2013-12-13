@@ -28,6 +28,38 @@ def ask_execute(description, script):
         check_call(script, shell=True)
 
 
+def resolve_dependency_order(modules):
+    """
+    Builds a list of module names to be executed in order so as to avoid
+    dependency conflicts.
+    """
+    order = []
+    while modules:
+        count = len(modules)
+        if count == 1:
+            order.append(list(modules.values())[0]["name"])
+            break
+
+        for name in modules:
+            resolved = [True if dep in order else False 
+                        for dep in modules[name]["dependencies"]]
+            if resolved.count(True) == len(modules[name]["dependencies"]):
+                order.append(name)
+
+        for name in order:
+            if name in modules:
+                del modules[name]
+        
+        # No change in count likely means circular dependency
+        if count == len(modules):
+            print("<<<<<ERROR>>>>>")
+            print("Cannot resolve dependencies")
+            for module in modules.values():
+                print(module)
+                exit()
+    return order
+
+
 def main(args):
     """
     Main entry point.
@@ -59,8 +91,8 @@ def main(args):
         modules[struct["name"]] = struct
 
     # Execute each module
-    for module in modules:
-        module = modules[module]
+    for name in resolve_dependency_order(modules):
+        module = modules[name]
         print("c[] {0}".format(module["name"]))
         if not args:
             ask_execute(module["name"], module["script"])
