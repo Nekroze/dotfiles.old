@@ -73,12 +73,6 @@ def main(args):
 
     If no arguments are given to this script then the user will be asked about
     installing each module after being given its description.
-    
-    To run without user input enter the name for each module to be executed  as
-    an argument to this script.
-    
-    Providing an invalid module name argument will simply display all available
-    module names.
     """
     # Load all module definitions
     modules_dir = path.join(environ["DOTFILES"], "modules")
@@ -98,11 +92,7 @@ def main(args):
     for name in resolve_dependency_order(modules):
         module = modules[name]
         print("c[] {0}".format(module["name"]))
-        if not args:
-            ask_execute(module["name"], module["script"])
-        else:
-            if module["name"] in args:
-                check_call(module["script"], shell=True)
+        ask_execute(module["name"], module["script"])
 
     return 0
 
