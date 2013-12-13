@@ -109,10 +109,11 @@ def main(args):
     for script in scripts:
         short, desc = read_description(script)
         print("c[] {0}".format(short))
-        if args and short in args:
-            perform(script)
-        else:
+        if not args:
             ask_perform(desc, script)
+        else:
+            if short in args:
+                perform(script)
         print()
     return 0
 
