@@ -1,0 +1,8 @@
+{
+    "name": "Template",
+    "description": "Does things.",
+    "script": "install.sh",
+    "dependencies": [
+        
+        ]
+}
