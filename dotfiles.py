@@ -1,11 +1,11 @@
 #!/bin/env python
 # -*- mode: python; coding: utf-8 -*-
 from __future__ import print_function
-__doc__ = """
-Installation script for Nekroze's dotfiles package.
-"""
+__doc__ = """Installation script for Nekroze's dotfiles package."""
 from subprocess import call
 from os import path, environ
+from glob import glob
+
 
 try:
     raw_input
@@ -41,8 +41,59 @@ def perform(commands):
         check_call(command.split())
 
 
+def read_description(filename):
+    """
+    Read a special description comment from the given filename. Only the first
+    description block will be read.
+
+    The description comment is all lines between two lines that contain five
+    pound/crunch symbols (#). The first five bang/crunch line will provide the
+    short description and the rest until the final five bang/crunch line will
+    provide the long description.
+
+    Each of these lines have their first character
+    removed which should be another pound/crunch anyways.
+
+    For example:
+    ##### Description
+    # where we describe stuff.
+    # lots of stuff.
+    #####
+
+    The above, when read with this function, will yield the following data
+    structure:
+    ("Description", "where we describe stuff.\nlots of stuff.")
+    """
+    found = False
+    description = []
+    short = ""
+    with open(filename, 'r') as f:
+         for line in f:
+             if line == "#"*5:
+                 if not found:
+                     short = line[5:].strip()
+                     found = True
+                 else:
+                     break
+             elif found and line:
+                 description.append(line[1:].strip())
+    else:
+        print("<<<<<ERROR>>>>>")
+        print("No description section found in {0}!".format(filename))
+        exit()
+    return (short, "\n".join(description))
+
+
 def main(args):
     """Main entry point"""
+    scripts = glob(path.join(environ["DOTFILES"], "*.sh"))
+    for script in scripts:
+        short, desc = read_description(script)
+        print("c[] {1}".format(short))
+        if args and short in args:
+            perform(script)
+        else:
+            ask_perform(desc, script)
     return 0
 
 
