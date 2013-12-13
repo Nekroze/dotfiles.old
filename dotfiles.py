@@ -48,8 +48,8 @@ def read_description(filename):
 
     The description comment is all lines between two lines that contain five
     pound/crunch symbols (#). The first five bang/crunch line will provide the
-    short description and the rest until the final five bang/crunch line will
-    provide the long description.
+    short description as the following word and the rest until the final five
+    bang/crunch line will provide the long description.
 
     Each of these lines have their first character
     removed which should be another pound/crunch anyways.
@@ -71,7 +71,8 @@ def read_description(filename):
          for line in f:
              if line == "#"*5:
                  if not found:
-                     short = line[5:].strip()
+                     short = line[5:].strip().split()
+                     short = short[0] if short else ""
                      found = True
                  else:
                      break
