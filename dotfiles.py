@@ -48,31 +48,32 @@ def read_description(filename):
 
     The description comment is all lines between two lines that contain five
     pound/crunch symbols (#). The first five bang/crunch line will provide the
-    short description as the following word and the rest until the final five
-    bang/crunch line will provide the long description.
+    name as the following word and the rest until the next five bang/crunch
+    line will provide the long description.
 
-    Each of these lines have their first character
-    removed which should be another pound/crunch anyways.
+    Each of these lines have their first character removed which should be
+    another pound/crunch anyways.
 
     For example:
-    ##### Description
+    ##### Name
     # where we describe stuff.
     # lots of stuff.
     #####
 
     The above, when read with this function, will yield the following data
     structure:
-    ("Description", "where we describe stuff.\nlots of stuff.")
+    ("Name", "where we describe stuff.\nlots of stuff.")
+
     """
     found = False
     description = []
-    short = ""
+    name = ""
     with open(filename, 'r') as f:
         for line in f:
             if line[:5] == "#"*5:
                 if not found:
-                    short = line[5:].strip().split()
-                    short = short[0] if short else ""
+                    name = line[5:].strip().split()
+                    name = name[0] if name else ""
                     found = True
                 else:
                     break
@@ -80,13 +81,30 @@ def read_description(filename):
                 description.append(line[1:].strip())
         else:
             print("<<<<<ERROR>>>>>")
-            print("No description section found in {0}!".format(filename))
+            print("No/Invalid description section found in {0}!".format(filename))
             exit()
-    return (short, "\n".join(description))
+    return (name, "\n".join(description))
 
 
 def main(args):
-    """Main entry point"""
+    """
+    Main entry point.
+
+    Collects filenames matching "./scripts/*.sh" assuming "./" is the dotfiles
+    repo.
+
+    For each script that is collected its description are loaded name is
+    displayed.
+
+    If no arguments are given to this script then the user will be questioned
+    before running each script after being given its long description.
+    
+    To run without user input enter the name for each script to be executed as
+    an argument to this script.
+    
+    Providing an invalid name argument will simply display all
+    available script names.
+    """
     scripts = glob(path.join(environ["DOTFILES"], "scripts", "*.sh"))
     for script in scripts:
         short, desc = read_description(script)
