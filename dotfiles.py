@@ -90,6 +90,10 @@ def main(args):
         struct["script"] = path.join(path.dirname(module), struct["script"])
         modules[struct["name"]] = struct
 
+    # Ensure module template is not used
+    if "Template" in modules:
+        del modules["Template"]
+
     # Execute each module
     for name in resolve_dependency_order(modules):
         module = modules[name]
@@ -99,6 +103,7 @@ def main(args):
         else:
             if module["name"] in args:
                 check_call(module["script"], shell=True)
+
     return 0
 
 
