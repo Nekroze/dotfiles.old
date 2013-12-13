@@ -24,7 +24,7 @@ def ask_perform(description, commands):
     """
     print(description)
     answer = raw_input("\n[Y/n]>")
-    if not answer or answer.lower() in ("y", "yes")):
+    if not answer or answer.lower() in ("y", "yes"):
         perform(commands)
 
 
@@ -105,7 +105,7 @@ def main(args):
     Providing an invalid name argument will simply display all
     available script names.
     """
-    scripts = glob(path.join(environ["DOTFILES"], "scripts", "*.sh"))
+    scripts = glob(path.join(environ["DOTFILES"], "scripts", "*", "*.dsh"))
     for script in scripts:
         short, desc = read_description(script)
         print("c[] {0}".format(short))
