@@ -5,7 +5,7 @@ __doc__ = """
 Installation script for Nekroze's dotfiles package.
 """
 from subprocess import call
-from os import path
+from os import path, environ
 
 try:
     raw_input
@@ -13,8 +13,7 @@ except NameError:
     raw_input = input
 
 
-USERHOME = path.expanduser("~")
-DOTDIR = os.path.dirname(os.path.realpath(__file__))
+environ["DOTFILES"] = os.path.dirname(os.path.realpath(__file__))
 
 
 def ask_perform(description, commands):
@@ -37,10 +36,16 @@ def perform(commands):
     """
     if isinstance(commands, str):
         commands = commands.split()
-    for command in commands:
-        if call(commands.split()):
-            print("<<<<ERROR>>>>")
-            print("<<<<The following command returned non-zero:")
-            print(command)
-            exit()
 
+    for command in commands:
+        check_call(command.split())
+
+
+def main(args):
+    """Main entry point"""
+    return 0
+
+
+if __name__ == "__main__":
+    from sys import argv
+    main(argv[1:])
