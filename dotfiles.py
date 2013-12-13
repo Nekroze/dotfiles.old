@@ -86,7 +86,7 @@ def read_description(filename):
 
 def main(args):
     """Main entry point"""
-    scripts = glob(path.join(environ["DOTFILES"], "installs", "*.sh"))
+    scripts = glob(path.join(environ["DOTFILES"], "scripts", "*.sh"))
     for script in scripts:
         short, desc = read_description(script)
         print("c[] {1}".format(short))
