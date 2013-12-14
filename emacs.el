@@ -29,8 +29,7 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 
-;;Autofill Mode for python
-(setq-default fill-column 79)
+;;Autofill Mode for org-mode
 (add-hook 'org-mode-hook
           (lambda ()
             (set-fill-column 100)
