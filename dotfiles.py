@@ -65,7 +65,7 @@ def resolve_dependency_order(modules):
     return order
 
 
-def package_manager():
+def detect_package_manager():
     """Returns a dictionary of commands for package management."""
     with open("package_managers.json") as f:
         managers = json.load(f)
@@ -95,6 +95,7 @@ def main(args):
     If no arguments are given to this script then the user will be asked about
     installing each module after being given its description.
     """
+    detect_package_manager()
     # Load all module definitions
     modules_dir = path.join(environ["DOTFILES"], "modules")
     pattern = path.join(modules_dir, "*", "module.json")
