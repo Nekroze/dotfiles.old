@@ -1,0 +1,8 @@
+{
+    "name": "Git",
+    "description": "Useful git configurations",
+    "script": "install.sh",
+    "dependencies": [
+        
+        ]
+}

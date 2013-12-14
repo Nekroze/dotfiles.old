@@ -1,0 +1,8 @@
+{
+    "name": "Shell",
+    "description": "Some handy common shell configurations",
+    "script": "install.sh",
+    "dependencies": [
+        
+        ]
+}

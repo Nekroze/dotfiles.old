@@ -1,0 +1,9 @@
+{
+    "name": "Zsh",
+    "description": "Zsh configurations including oh-my-zsh with a custom theme.",
+    "script": "install.sh",
+    "dependencies": [
+        "Shell",
+        "Git"
+        ]
+}
