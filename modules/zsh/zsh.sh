@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="eturnilnetwork"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git gitfast git-extras pip python zsh-syntax-highlight
-         virtualenvwrapper web-search)
+         virtualenvwrapper virtualenv-prompt web-search)
 source $ZSH/oh-my-zsh.sh
 
 # just type '...' to get '../..'

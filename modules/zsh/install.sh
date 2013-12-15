@@ -37,3 +37,18 @@ else # Update the current repo.
     git pull
     cd "$CURR"
 fi
+
+# Install virtualenv-prompt
+if [[ ! -d ~/.oh-my-zsh/custom/plugins/virtualenv-prompt ]]; then
+    mkdir -p ~/.oh-my-zsh/custom/plugins/
+    git clone git://github.com/tonyseek/oh-my-zsh-virtualenv-prompt.git ~/.oh-my-zsh/custom/plugins/virtualenv-prompt
+else # Update the current repo.
+    CURR=`pwd`
+    cd ~/.oh-my-zsh/custom/plugins/virtualenv-prompt
+    git pull
+    cd "$CURR"
+fi
+
+# Install eturnilnetwork zsh theme.
+mkdir -p ~/.oh-my-zsh/custom/
+cp -f $DOTFILES/modules/zsh/eturnilnetwork.zsh-theme ~/.oh-my-zsh/custom/

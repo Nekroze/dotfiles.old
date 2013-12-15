@@ -37,7 +37,11 @@ ZSH_THEME_GIT_PROMPT_AHEAD=" %{$YELLOW%}(!)"
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$WHITE%}[%{$GREEN_BOLD%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$WHITE%}]"
 
+# Remove virtualenv brackets
+ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX=""
+ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX=""
+
 # Prompt format
 PROMPT=$'%{$RED_BOLD%}┌[%{$BLUE_BOLD%}%~%u %{$RESET_COLOR%}%{$BLUE_BOLD%}$(current_branch)$(git_prompt_short_sha)%{$RESET_COLOR%}
-%{$RED_BOLD%}└[%{$BLUE_BOLD%}>%{$RESET_COLOR%}'
+%{$RED_BOLD%}└[$(virtualenv_prompt_info)%{$BLUE_BOLD%}>%{$RESET_COLOR%}'
 RPROMPT=$'$(parse_git_dirty)$(git_prompt_ahead)$(git_prompt_status)%{$RESET_COLOR%}'
