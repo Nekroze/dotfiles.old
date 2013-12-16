@@ -1,0 +1,5 @@
+cookiecutter>=0.7.0
+pytest>=2.5.0
+tox>=1.6.1
+sphinx>=1.2
+virtualenvwrapper>=4.1.1

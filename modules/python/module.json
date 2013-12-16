@@ -1,0 +1,8 @@
+{
+    "name": "Python",
+    "description": "Install some python packages via pip",
+    "script": "install.sh",
+    "dependencies": [
+        
+        ]
+}
