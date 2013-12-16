@@ -12,6 +12,7 @@ write "source $DOTFILES/modules/shell/exports.sh" ~/.zshrc
 write "source $DOTFILES/modules/shell/aliases.sh" ~/.zshrc
 write "source $DOTFILES/modules/zsh/zsh.sh" ~/.zshrc
 write "DEBIAN_PREVENT_KEYBOARD_CHANGES=yes" ~/.zshenv
+write "if [[ ! -z $SSH_AGENT_PID ]]; then kill $SSH_AGENT_PID; done" ~/.zlogout
 
 # Clone oh-my-zsh as required.
 if [[ ! -d ~/oh-my-zsh/ ]]; then
