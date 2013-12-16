@@ -32,15 +32,30 @@
 ;;Autofill Mode for org-mode
 (add-hook 'org-mode-hook
           (lambda ()
+            (auto-fill-mode 1)
+            (set-fill-column 100)
+          ))
+
+;;Autofill Mode for markdown-mode
+(add-hook 'markdown-mode-hook
+          (lambda ()
+            (auto-fill-mode 1)
+            (set-fill-column 100)
+          ))
+
+;;Autofill Mode for rst-mode
+(add-hook 'rst-mode-hook
+          (lambda ()
+            (auto-fill-mode 1)
             (set-fill-column 100)
           ))
 
 ;Flyspell in python comments
 (add-hook 'python-mode-hook
           (lambda ()
-            (set-fill-column 79)
             (flyspell-prog-mode)
             (auto-fill-mode 1)
+            (set-fill-column 79)
           ))
 
 ;;Flyspell in ReST mode
