@@ -89,13 +89,13 @@ paksee () {
 update () {
     if hash apt-get 2>/dev/null; then
         sudo apt-get update
-        sudo apt-get upgrade -y $@
+        sudo apt-get dist-upgrade -y
     elif hash yaourt 2>/dev/null; then
-        yaourt -Syua --devel $@
+        yaourt -Syua --devel
     elif hash packer 2>/dev/null; then
-        sudo packer -Syu --noedit --noconfirm $@
+        sudo packer -Syu --noedit --noconfirm
     elif hash pacman 2>/dev/null; then
-        sudo pacman -Syu $@
+        sudo pacman -Syu
     fi
 }
 fullupdate () {
