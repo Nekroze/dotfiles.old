@@ -26,7 +26,6 @@ dotupdate () {
 }
 # SSH
 ssh () {
-    if [[ ! -z $SSH_AGENT_PID ]]; then eval `ssh-agent`; done
     KEYS=`ssh-add -l`
     EMPTY="The agent has no identities."
     if [ "$KEYS"!="$EMPTY" ]; then
