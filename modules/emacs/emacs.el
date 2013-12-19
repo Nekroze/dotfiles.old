@@ -29,6 +29,9 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 
+;;org-mode indented headings
+(setq org-startup-indented t)
+
 ;;Autofill Mode for org-mode
 (add-hook 'org-mode-hook
           (lambda ()
