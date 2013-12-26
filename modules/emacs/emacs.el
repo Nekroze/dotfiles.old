@@ -29,12 +29,18 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 
+;;org-mode indented headings
+(setq org-startup-indented t)
+
+(setq-default fill-column 100)
+
 ;;Autofill Mode for org-mode
 (add-hook 'org-mode-hook
           (lambda ()
             (auto-fill-mode 1)
             (set-fill-column 100)
           ))
+(add-hook 'org-mode-hook 'visual-line-mode)
 
 ;;Autofill Mode for markdown-mode
 (add-hook 'markdown-mode-hook
@@ -42,6 +48,7 @@
             (auto-fill-mode 1)
             (set-fill-column 100)
           ))
+(add-hook 'markdown-mode-hook 'visual-line-mode)
 
 ;;Autofill Mode for rst-mode
 (add-hook 'rst-mode-hook
@@ -49,6 +56,7 @@
             (auto-fill-mode 1)
             (set-fill-column 100)
           ))
+(add-hook 'rst-mode-hook 'visual-line-mode)
 
 ;Flyspell in python comments
 (add-hook 'python-mode-hook
