@@ -24,17 +24,6 @@ dotupdate () {
     git pull
     cd ~/
 }
-# SSH
-ssh () {
-    KEYS=`ssh-add -l`
-    EMPTY="The agent has no identities."
-    if [ "$KEYS"!="$EMPTY" ]; then
-	echo "Adding key"
-        ssh-add
-    fi
-    ssh $@
-}
-## ls
 alias ls='ls -h --color'
 alias lx='ls -lXB'         #  Sort by extension.
 alias lk='ls -lSr'         #  Sort by size, biggest last.
