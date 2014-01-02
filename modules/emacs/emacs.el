@@ -200,3 +200,5 @@
 
 ;; Set theme
 (load-theme 'ample-zen t)
+;; Fix for some console themes - let term decide bg color
+(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
