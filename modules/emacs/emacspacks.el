@@ -1,13 +1,13 @@
 ; Package list
-(setq package-list '(marmalade makefile-runner org color-theme
-                               solarized-theme markdown-mode
-                               git-commit git-commit-mode
-                               gitconfig gitignore-mode flycheck
-                               flymake auto-complete
-                               auto-indent-mode lineno marmalade
-                               python starter-kit
-                               starter-kit-bindings idomenu
-                               ido-ubiquitous lua-mode
+(setq package-list '(marmalade makefile-runner org
+                               color-theme-solarized
+                               markdown-mode git-commit
+                               git-commit-mode gitconfig
+                               gitignore-mode flycheck flymake
+                               auto-complete auto-indent-mode
+                               lineno marmalade python
+                               starter-kit starter-kit-bindings
+                               idomenu ido-ubiquitous lua-mode
                                flymake-lua d-mode flymake-d
                                flylisp))
 ; Repositories
