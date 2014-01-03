@@ -121,9 +121,9 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>dev</name>
-      <name>wiki</name>
+      <name>term</name>
       <name>web</name>
+      <name>dev</name>
       <name>misc</name>
     </names>
     <popupTime>875</popupTime>
@@ -934,7 +934,12 @@
 
   # end of the example
 -->
-    <application name="terminator">
+    <application class="Terminator">
+      <decor>no</decor>
+      <maximized>yes</maximized>
+      <desktop>1</desktop>
+    </application>
+    <application class="URxvt">
       <decor>no</decor>
       <maximized>yes</maximized>
       <desktop>1</desktop>
@@ -944,17 +949,7 @@
       <maximized>yes</maximized>
       <desktop>1</desktop>
     </application>
-    <application class="Geany">
-      <decor>no</decor>
-      <maximized>yes</maximized>
-      <desktop>1</desktop>
-    </application>
-    <application class="MonoDevelop">
-      <decor>no</decor>
-      <maximized>yes</maximized>
-      <desktop>1</desktop>
-    </application>
-    <application class="Zim">
+    <application class="luakit">
       <decor>no</decor>
       <maximized>yes</maximized>
       <desktop>2</desktop>
@@ -962,9 +957,34 @@
     <application class="Iceweasel">
       <decor>no</decor>
       <maximized>yes</maximized>
-      <desktop>3</desktop>
+      <desktop>2</desktop>
     </application>
     <application class="Icedove">
+      <decor>no</decor>
+      <maximized>yes</maximized>
+      <desktop>2</desktop>
+    </application>
+    <application class="Deluge">
+      <decor>no</decor>
+      <maximized>yes</maximized>
+      <desktop>2</desktop>
+    </application>
+    <application class="Geany">
+      <decor>no</decor>
+      <maximized>yes</maximized>
+      <desktop>3</desktop>
+    </application>
+    <application class="jetbrains-pycharm">
+      <decor>no</decor>
+      <maximized>yes</maximized>
+      <desktop>3</desktop>
+    </application>
+    <application class="MonoDevelop">
+      <decor>no</decor>
+      <maximized>yes</maximized>
+      <desktop>3</desktop>
+    </application>
+    <application class="Zim">
       <decor>no</decor>
       <maximized>yes</maximized>
       <desktop>3</desktop>
@@ -975,6 +995,11 @@
       <desktop>4</desktop>
     </application>
     <application class="Xchat">
+      <decor>no</decor>
+      <maximized>yes</maximized>
+      <desktop>4</desktop>
+    </application>
+    <application name="TaylorLawson.kdbx - KeePass Password Safe">
       <decor>no</decor>
       <maximized>yes</maximized>
       <desktop>4</desktop>
