@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 # -*- mode: python; coding: utf-8 -*-
 from __future__ import print_function
 __doc__ = """Installation script for Nekroze's dotfiles package."""
