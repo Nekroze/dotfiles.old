@@ -1,7 +1,5 @@
 #!/bin/sh
 
-DOTFILES=~/dotfiles
-
 mkdir -p ~/.config/openbox
 for f in $DOTFILES/modules/openbox/openbox/*; do
     if [ ! -f ~/.config/openbox/$(basename $f)-original ]; then
