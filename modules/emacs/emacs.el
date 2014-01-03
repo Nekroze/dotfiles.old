@@ -14,11 +14,6 @@
 ;; Font
 (set-face-attribute 'default nil :height 100)
 
-;; Powerline Status
-(add-to-list 'load-path "~/.emacs.d/powerline")
-(require 'powerline)
-(powerline-default-theme)
-
 ;; Change Keybinds
 ; Makes keeping emacs open for longer periods easier
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
