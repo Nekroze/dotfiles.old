@@ -4,7 +4,7 @@ from __future__ import print_function
 __doc__ = """Installation script for Nekroze's dotfiles package."""
 from package_manager import detect_package_manager
 from subprocess import check_call
-from os import path, environ
+from os import path, environ, chdir
 from glob import glob
 import json
 
@@ -101,4 +101,5 @@ def main(args):
 
 if __name__ == "__main__":
     from sys import argv
+    chdir(path.dirname(argv[0]))
     main(argv[1:])
