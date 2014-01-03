@@ -91,10 +91,10 @@ def main(args):
         del modules["Template"]
 
     # Execute each module
-    for name in resolve_dependency_order(modules):
+    for name in modules:
         module = modules[name]
         print("c[] {0}".format(module["name"]))
-        ask_execute(module["name"], module["script"])
+        ask_execute(module["description"], module["script"])
 
     return 0
 
