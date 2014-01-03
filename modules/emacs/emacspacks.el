@@ -1,6 +1,6 @@
 ; Package list
 (setq package-list '(marmalade makefile-runner org color-theme
-                               ample-zen-theme markdown-mode
+                               solarized-theme markdown-mode
                                git-commit git-commit-mode
                                gitconfig gitignore-mode flycheck
                                flymake auto-complete
@@ -8,12 +8,14 @@
                                python starter-kit
                                starter-kit-bindings idomenu
                                ido-ubiquitous lua-mode
-                               flymake-lua d-mode flymake-d))
+                               flymake-lua d-mode flymake-d
+                               flylisp))
 ; Repositories
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/"))
-)
+			 ("marmalade" . "http://marmalade-repo.org/packages/")
+                         )
+      )
 
 ; Activate packages
 (package-initialize)
