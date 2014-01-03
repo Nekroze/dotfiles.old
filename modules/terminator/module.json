@@ -1,6 +1,6 @@
 {
-    "name": "Template",
-    "description": "Does things.",
+    "name": "Terminator",
+    "description": "Solarized settings for Terminator.",
     "script": "install.sh",
     "dependencies": [
         
