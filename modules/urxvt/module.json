@@ -1,0 +1,8 @@
+{
+    "name": "Urxvt",
+    "description": "Solarized settings for Urxvt",
+    "script": "install.sh",
+    "dependencies": [
+        
+        ]
+}
