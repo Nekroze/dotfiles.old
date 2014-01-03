@@ -42,6 +42,6 @@ ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX=""
 ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX=""
 
 # Prompt format
-PROMPT=$'%{$GREEN_BOLD%}┌[%{$BLUE_BOLD%}%~%u %{$RESET_COLOR%}%{$BLUE_BOLD%}$(current_branch)$(git_prompt_short_sha)%{$RESET_COLOR%}
-%{$GREEN_BOLD%}└[$(virtualenv_prompt_info)%{$BLUE_BOLD%}>%{$RESET_COLOR%}'
+PROMPT=$'%{$GREEN%}┌[%{$BLUE_BOLD%}%~%u %{$RESET_COLOR%}%{$BLUE%}$(current_branch)$(git_prompt_short_sha)%{$RESET_COLOR%}
+%{$GREEN%}└[$(virtualenv_prompt_info)%{$BLUE_BOLD%}>%{$RESET_COLOR%}'
 RPROMPT=$'$(parse_git_dirty)$(git_prompt_ahead)$(git_prompt_status)%{$RESET_COLOR%}'
