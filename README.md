@@ -27,7 +27,7 @@ This repo contains a simple installer. From a new environment to full setup
 this is all you need to do:
 
     $ git clone https://github.com/Nekroze/dotfiles.git ~/dotfiles
-    $ bash ~/dotfiles/install.sh
+    $ python ~/dotfiles/dotfiles.py
     
 If you have curl or wget you can use either of the following commands:
 
@@ -35,24 +35,7 @@ If you have curl or wget you can use either of the following commands:
     $ wget --no-check-certificate https://github.com/Nekroze/dotfiles/raw/master/grab.sh -O -
     
 After this the next time your shell is started you will be using this
-environment. Any files that get replaced will be moved to `~/dotfiles_old` for
-backup.
-
-After the basics are installed you may choose to install some usefull programs
-and git configs. In order to install the programs you will be asked what
-command you use to install packages. This is your package manager command and
-its install option. For example.
-
-Debian/Ubuntu:
-    
-    $ sudo apt-get install
-    
-Arch:
-
-    $ sudo pacman -S
-    
-If you don't know how to use your distributions package manager then get
-googling!
+environment.
 
 Once installed you will have your own `~/.bashrc` and `~/.zshrc` that are setup
 to load the settings of this repo but allow you to tack on your own settings to
@@ -104,7 +87,7 @@ dotfiles at any time by calling:
     $ dotupdate
     
 You can also update all git repositories (pull them from their remotes) in
-the `~/git/` directory. If you do store you repositories there that is. To
+the `~/projects/` directory. If you do store you repositories there that is. To
 perform a pull on each repo simply call:
 
     $ pullall

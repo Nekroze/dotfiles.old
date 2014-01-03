@@ -2,15 +2,21 @@
 ## Project Management
 pullall() {
     echo
-    echo "Updating all git repositories in ~/git"
-    if [ -d ~/git ]; then
-        cd ~/git
+    echo "Updating all git repositories in ~/projects"
+    if [ -d ~/projects ]; then
+        cd ~/projects
         for dir in */; do
             if [ -d $dir/.git ]; then
                 echo
                 echo "Pulling $dir"
                 cd $dir
                 git pull
+                cd ../
+            elif [ -d $dir/.hd ]; then
+                echo
+                echo "Pulling $dir"
+                cd $dir
+                hg pull
                 cd ../
             fi
         done
