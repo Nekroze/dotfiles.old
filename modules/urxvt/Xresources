@@ -2,11 +2,13 @@
 ! Xft settings
 !-------------------------------------------------------------------------------
 
-Xft.dpi: 96
-Xft.antialias: false
-Xft.rgba: rgb
+Xft.autohint: true
+Xft.antialias: true
 Xft.hinting: true
 Xft.hintstyle: hintslight
+Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
 
 !-------------------------------------------------------------------------------
 ! URxvt settings
@@ -29,7 +31,7 @@ URxvt.intensityStyles: false
 
 ! Fonts
 URxvt.allow_bold: false
-/* URxvt.font: -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
+!URxvt.font: -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1
 URxvt*font: xft:Monospace:pixelsize=10
 URxvt*boldFont: xft:Monospace:pixelsize=10
 
@@ -43,7 +45,7 @@ URxvt.scrollBar: false
 ! Perl extensions
 URxvt.perl-ext-common: default,matcher
 URxvt.matcher.button: 1
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: luakit
 
 ! Cursor
 URxvt.cursorBlink: true
