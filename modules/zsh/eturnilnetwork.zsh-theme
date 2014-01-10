@@ -19,7 +19,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 
 # Format for parse_git_dirty()
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$RED%}(*)"
+ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Format for git_prompt_status()
@@ -34,14 +34,14 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED=" %{$WHITE%}untracked"
 ZSH_THEME_GIT_PROMPT_AHEAD=" %{$YELLOW%}(!)"
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$WHITE%}[%{$GREEN_BOLD%}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$WHITE%}]"
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$YELLOW%}[%{$RED%}"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$YELLOW%}]"
 
 # Remove virtualenv brackets
 ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX=""
-ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX=""
+ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX="%{$RESET_COLOR%}%{$GREEN%}><"
 
 # Prompt format
-PROMPT=$'%{$GREEN%}┌[%{$BLUE_BOLD%}%~%u %{$RESET_COLOR%}%{$BLUE%}$(current_branch)$(git_prompt_short_sha)%{$RESET_COLOR%}
-%{$GREEN%}└[$(virtualenv_prompt_info)%{$BLUE_BOLD%}>%{$RESET_COLOR%}'
-RPROMPT=$'$(parse_git_dirty)$(git_prompt_ahead)$(git_prompt_status)%{$RESET_COLOR%}'
+PROMPT=$'%{$GREEN%}┌<%{$YELLOW%}%n@%m%{$GREEN%}> %{$BLUE_BOLD%}%~%u %{$RESET_COLOR%}
+%{$GREEN%}└<%{$BLUE_BOLD%}$(virtualenv_prompt_info)%{$BLUE_BOLD%}$(current_branch)%{$RESET_COLOR%}%{$GREEN%}>%{$RESET_COLOR%}'
+RPROMPT=$'$(parse_git_dirty)$(git_prompt_ahead)$(git_prompt_status)%{$RESET_COLOR%}$(git_prompt_short_sha)%{$BLUE%}%{$RESET_COLOR%}'
