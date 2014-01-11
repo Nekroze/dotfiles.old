@@ -1,6 +1,6 @@
-if [ -d ~/dotfiles ]
-then
-  echo "\033[0;33mYou already have dotfiles installed.\033[0m You'll need to remove ~/dotfiles if you want to install"
+if [ -d ~/dotfiles ]; then
+    echo
+    "\033[0;33mYou already have dotfiles installed.\033[0m You'll need to remove ~/dotfiles if you want to install it all again"
   exit
 fi
 
@@ -10,4 +10,4 @@ hash git 2>/dev/null && /usr/bin/env git clone https://github.com/Nekroze/dotfil
   exit
 }
 
-/usr/bin/env python ~/dotfiles/dotfiles.py
+/usr/bin/env python ~/dotfiles/dotfiles.py silent
