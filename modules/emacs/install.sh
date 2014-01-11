@@ -5,6 +5,10 @@
 ./write.py "export EDITOR=$DOTFILES/modules/emacs/emacsclient.sh" ~/.zshrc
 ./write.py "export VISUAL=\$EDITOR" ~/.zshrc
 
+for line in $(cat $DOTFILES/modules/emacs/Xresources); do
+    ./write.py $line ~/.Xresources
+done
+
 if type "emacs" > /dev/null; then
     echo
     echo "Installing emacs packages"
