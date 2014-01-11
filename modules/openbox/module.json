@@ -2,6 +2,7 @@
     "name": "Openbox",
     "description": "Installs configurations for openbox window manager",
     "script": "install.sh",
+    "silent": true
     "dependencies": [
         
         ]
