@@ -2,7 +2,7 @@
     "name": "Git",
     "description": "Useful git configurations",
     "script": "install.sh",
-    "silent": false
+    "silent": true
     "dependencies": [
         
         ]
