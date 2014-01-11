@@ -16,8 +16,7 @@ if type "emacs" > /dev/null; then
     echo
     echo "Byte compiling emacs config"
     emacs --batch --eval '(byte-compile-file "$MODULE/emacs.el")'
-    git config --global core.editor 'emacsclient -a "nano"'
-else
-    echo
-    echo "emacs not found!"
+    if hash git 2>/dev/null; then
+        git config --global core.editor 'emacsclient -a "nano"'
+    fi
 fi
