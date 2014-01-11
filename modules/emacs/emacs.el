@@ -14,6 +14,12 @@
 ;; Font
 (set-face-attribute 'default nil :height 100)
 
+;; Change Keybinds
+; Makes keeping emacs open for longer periods easier
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+(global-set-key (kbd "C-x C-k") 'save-buffers-kill-emacs)
+(global-set-key (kbd "C-x C-c") 'kill-this-buffer)
+
 ;;Markdown Mode
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
