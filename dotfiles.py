@@ -4,7 +4,8 @@ from __future__ import print_function
 __doc__ = """Installation script for Nekroze's dotfiles package."""
 from package_manager import detect_package_manager
 from subprocess import check_call, call
-from os import path, environ, chdir, X_OK
+from os import path, environ, chdir
+import os
 from glob import glob
 import json
 
