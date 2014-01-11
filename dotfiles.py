@@ -101,5 +101,6 @@ def main(args):
 
 if __name__ == "__main__":
     from sys import argv
-    chdir(path.dirname(argv[0]))
+    if path.dirname(argv[0]):
+        chdir(path.dirname(argv[0]))
     main(argv[1:])
