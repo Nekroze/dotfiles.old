@@ -105,8 +105,6 @@
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
 
-(add-to-list 'load-path "~/.emacs.d")
-
 ;; Show line numbers in left margin
 (global-linum-mode t)
 
