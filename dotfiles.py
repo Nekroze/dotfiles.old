@@ -19,21 +19,33 @@ environ["DOTFILES"] = path.dirname(path.realpath(__file__))
 environ["MODULES"] = path.join(environ["DOTFILES"], "modules")
 
 
-def ask_execute(description, script):
+def ask_execute(module):
     """
     Displays the description to the user and offers the choice of executing the
     given script. If no user input is given it will be considered a yes.
     """
-    print(description)
+    print(module["description"])
     answer = raw_input("\n[Y/n]>")
     if not answer or answer.lower() in ("y", "yes"):
-        just_execute(script)
+        just_execute(module)
 
 
-def just_execute(script):
-    """Execute the given script and provide the MODULE env var."""
-    environ["MODULE"] = path.dirname(script)
-    check_call(script, shell=True)
+MISSING_COMMANDS = []
+
+def just_execute(module):
+    """
+    Check that the module has all the commands it needs then execute the given
+    script and provide the MODULE env var.
+    """
+    missing = [com for com in MISSING_COMMANDS if com in module["commands"]]
+    if missing:
+        print("!! {0} module requires the following commands: {1}",
+              [module["name"], ' '.join(missing)])
+        return False
+    else:
+        environ["MODULE"] = path.dirname(module["script"])
+        check_call(module["script"], shell=True)
+        return True
 
 
 def resolve_dependency_order(modules):
@@ -90,7 +102,6 @@ def main(args):
     # Load all module definitions
     pattern = path.join(environ["MODULES"], "*", "module.json")
     modules = {}
-    missing = False
     devnull = open(os.devnull)
     for module in glob(pattern):
         with open(module) as f:
@@ -100,11 +111,8 @@ def main(args):
         # Check for commands
         for command in struct["commands"]:
             if call(["which", command], stdout=devnull, stderr=devnull):
-                print("COMMAND NOT FOUND:", command)
-                missing = True
+                MISSING_COMMANDS.append(command)
     devnull.close()
-    if missing:
-        return 1
 
     # Ensure module template is not used
     if "Template" in modules:
@@ -136,7 +144,7 @@ def main(args):
         for name in modules:
             module = modules[name]
             print("c[] {0}".format(module["name"]))
-            ask_execute(module["description"], module["script"])
+            ask_execute(module)
 
     return 0
 
