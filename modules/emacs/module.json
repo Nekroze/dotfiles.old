@@ -1,6 +1,6 @@
 {
-    "name": "Template",
-    "description": "Does things.",
+    "name": "Emacs",
+    "description": "Install emacs theme applies better default settings etc.",
     "script": "install.sh",
     "dependencies": [
         
