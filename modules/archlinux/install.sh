@@ -1,13 +1,5 @@
 #!/bin/sh
 
-write() {
-    if ! grep -q $1 $2 ; then
-        touch $2
-        (echo $1; cat $2) >tmpfile
-        mv tmpfile $2
-    fi
-}
-
 echo "Installing package-query"
 curl -O https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz
 tar zxvf package-query.tar.gz
