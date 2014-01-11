@@ -1,9 +1,9 @@
 #!/bin/sh
 
-././write.py.py "source $DOTFILES/modules/shell/exports.sh" ~/.zshrc
-././write.py.py "source $DOTFILES/modules/shell/aliases.sh" ~/.zshrc
-././write.py.py "source $DOTFILES/modules/zsh/zsh.sh" ~/.zshrc
-././write.py.py "DEBIAN_PREVENT_KEYBOARD_CHANGES=yes" ~/.zshenv
+./write.py.py "source $MODULES/shell/exports.sh" ~/.zshrc
+./write.py.py "source $MODULES/shell/aliases.sh" ~/.zshrc
+./write.py.py "source $MODULE/zsh.sh" ~/.zshrc
+./write.py.py "DEBIAN_PREVENT_KEYBOARD_CHANGES=yes" ~/.zshenv
 
 # Clone oh-my-zsh as required.
 if [ ! -d ~/oh-my-zsh/ ] ; then
@@ -17,7 +17,7 @@ fi
 
 # Install eturnilnetwork zsh theme.
 mkdir -p ~/.oh-my-zsh/custom/
-cp -f $DOTFILES/modules/zsh/eturnilnetwork.zsh-theme ~/.oh-my-zsh/custom/
+cp -f $MODULE/eturnilnetwork.zsh-theme ~/.oh-my-zsh/custom/
 
 # Install zsh-syntax-hightlighting.
 if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] ; then
@@ -40,7 +40,3 @@ else # Update the current repo.
     git pull
     cd "$CURR"
 fi
-
-# Install eturnilnetwork zsh theme.
-mkdir -p ~/.oh-my-zsh/custom/
-cp -f $DOTFILES/modules/zsh/eturnilnetwork.zsh-theme ~/.oh-my-zsh/custom/

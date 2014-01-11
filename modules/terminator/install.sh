@@ -6,4 +6,4 @@ if [ -f ~/.config/terminator/config ]; then
         cp ~/.config/terminator/config ~/.config/terminator/config_original
     fi
 fi
-cp $DOTFILES/modules/terminator/config ~/.config/terminator/config
+cp $MODULE/config ~/.config/terminator/config
