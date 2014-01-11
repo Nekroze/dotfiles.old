@@ -9,6 +9,7 @@ installations and maybe some of the aliases for package management.
 Features
 --------
 
+* Completely modular and reusable design
 * Great support for *zsh*
 * Automatically installs *oh-my-zsh*
 * A nice *zsh* prompt designed for *git* use with a *solarized* color scheme
