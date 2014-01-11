@@ -100,8 +100,8 @@ def main(args):
         # Ensure all args are valid module names
         bad_args = [module for module in args if module not in modules]
         if bad_args:
-            print("ERROR - BAD MODULES:", bad_args)
-            print("AVAILABLE MODULES:", modules.items())
+            print("ERROR - BAD MODULES:", ' '.join(bad_args))
+            print("AVAILABLE MODULES:", ' '.join(modules.keys()))
             return 0
 
         # Execute selected modules
