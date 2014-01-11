@@ -27,8 +27,13 @@ def ask_execute(description, script):
     print(description)
     answer = raw_input("\n[Y/n]>")
     if not answer or answer.lower() in ("y", "yes"):
-        environ["MODULE"] = path.dirname(module["script"])
-        check_call(script, shell=True)
+        just_execute(script)
+
+
+def just_execute(script):
+    """Execute the given script and provide the MODULE env var."""
+    environ["MODULE"] = path.dirname(script)
+    check_call(script, shell=True)
 
 
 def resolve_dependency_order(modules):
@@ -78,7 +83,7 @@ def main(args):
     installing each module after being given its description.
     """
     detect_package_manager()
-    # Load all module definitions    modules_dir = path.join()
+    # Load all module definitions
     pattern = path.join(environ["MODULES"], "*", "module.json")
     modules = {}
     for module in glob(pattern):
@@ -91,11 +96,24 @@ def main(args):
     if "Template" in modules:
         del modules["Template"]
 
-    # Execute each module
-    for name in modules:
-        module = modules[name]
-        print("c[] {0}".format(module["name"]))
-        ask_execute(module["description"], module["script"])
+    if args:
+        # Ensure all args are valid module names
+        bad_args = [module for module in args if module not in modules]
+        if bad_args:
+            print("ERROR - BAD MODULES:", bad_args)
+            print("AVAILABLE MODULES:", modules.items())
+            return 0
+
+        # Execute selected modules
+        for name in modules:
+            if name in args:
+                just_execute(modules[name]["script"])
+    else:
+        # Execute each module
+        for name in modules:
+            module = modules[name]
+            print("c[] {0}".format(module["name"]))
+            ask_execute(module["description"], module["script"])
 
     return 0
 
