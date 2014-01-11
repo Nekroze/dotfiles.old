@@ -3,8 +3,8 @@
 from __future__ import print_function
 __doc__ = """Installation script for Nekroze's dotfiles package."""
 from package_manager import detect_package_manager
-from subprocess import check_call
-from os import path, environ, chdir
+from subprocess import check_call, call
+from os import path, environ, chdir, X_OK
 from glob import glob
 import json
 
@@ -90,11 +90,21 @@ def main(args):
     # Load all module definitions
     pattern = path.join(environ["MODULES"], "*", "module.json")
     modules = {}
+    missing = False
+    devnull = open(os.devnull)
     for module in glob(pattern):
         with open(module) as f:
             struct = json.load(f)
         struct["script"] = path.join(path.dirname(module), struct["script"])
         modules[struct["name"]] = struct
+        # Check for commands
+        for command in struct["commands"]:
+            if call(["which", command], stdout=devnull, stderr=devnull):
+                print("COMMAND NOT FOUND:", command)
+                missing = True
+    devnull.close()
+    if missing:
+        return 1
 
     # Ensure module template is not used
     if "Template" in modules:
@@ -107,18 +117,20 @@ def main(args):
                 if modules[name]["silent"]:
                     environ["SILENT"] = "TRUE"
                     just_execute(modules[name]["script"])
+                    return 0
 
         # Ensure all args are valid module names
         bad_args = [module for module in args if module not in modules]
         if bad_args:
             print("ERROR - BAD MODULES:", ' '.join(bad_args))
             print("AVAILABLE MODULES:", ' '.join(modules.keys()))
-            return 0
+            return 2
 
         # Execute selected modules
         for name in modules:
             if name in args:
                 just_execute(modules[name]["script"])
+                return 0
     else:
         # Execute each module
         for name in modules:
@@ -130,7 +142,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    from sys import argv
+    from sys import argv, exit
     if path.dirname(argv[0]):
         chdir(path.dirname(argv[0]))
-    main(argv[1:])
+    exit(main(argv[1:]))
