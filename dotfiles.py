@@ -18,6 +18,7 @@ except NameError:
 
 environ["DOTFILES"] = path.dirname(path.realpath(__file__))
 environ["MODULES"] = path.join(environ["DOTFILES"], "modules")
+MISSING_COMMANDS = []
 
 
 def ask_execute(module):
@@ -30,8 +31,6 @@ def ask_execute(module):
     if not answer or answer.lower() in ("y", "yes"):
         just_execute(module)
 
-
-MISSING_COMMANDS = []
 
 def just_execute(module):
     """
@@ -62,7 +61,7 @@ def resolve_dependency_order(modules):
             break
 
         for name in modules:
-            resolved = [True if dep in order else False 
+            resolved = [True if dep in order else False
                         for dep in modules[name]["dependencies"]]
             if resolved.count(True) == len(modules[name]["dependencies"]):
                 order.append(name)
@@ -70,7 +69,7 @@ def resolve_dependency_order(modules):
         for name in order:
             if name in modules:
                 del modules[name]
-        
+
         # No change in count likely means circular dependency
         if count == len(modules):
             print("<<<<<ERROR>>>>>")
