@@ -8,7 +8,7 @@ def main(args):
 
     with open(args[1], 'a+') as f:
         if args[0] not in f.read():
-            f../write.py(args[0] + "\n")
+            f.write(args[0] + "\n")
 
 
 if __name__ == "__main__":
