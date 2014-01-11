@@ -1,8 +1,0 @@
-{
-    "name": "Arch Linux",
-    "description": "Install some handy arch packages like yaourt and git",
-    "script": "install.sh",
-    "dependencies": [
-        
-        ]
-}
