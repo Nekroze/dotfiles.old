@@ -4,7 +4,8 @@
     "script": "install.sh",
     "silent": true,
     "commands": [
-        
+        "zsh",
+        "git"
     ],
     "dependencies": [
         "Shell",

@@ -4,7 +4,7 @@
     "script": "install.sh",
     "silent": true,
     "commands": [
-        
+        "pip"
     ],
     "dependencies": [
         
