@@ -16,6 +16,7 @@ except NameError:
 
 
 environ["DOTFILES"] = path.dirname(path.realpath(__file__))
+environ["MODULES"] = path.join(environ["DOTFILES"], "modules")
 
 
 def ask_execute(description, script):
@@ -26,6 +27,7 @@ def ask_execute(description, script):
     print(description)
     answer = raw_input("\n[Y/n]>")
     if not answer or answer.lower() in ("y", "yes"):
+        environ["MODULE"] = path.dirname(module["script"])
         check_call(script, shell=True)
 
 
@@ -76,9 +78,8 @@ def main(args):
     installing each module after being given its description.
     """
     detect_package_manager()
-    # Load all module definitions
-    modules_dir = path.join(environ["DOTFILES"], "modules")
-    pattern = path.join(modules_dir, "*", "module.json")
+    # Load all module definitions    modules_dir = path.join()
+    pattern = path.join(environ["MODULES"], "*", "module.json")
     modules = {}
     for module in glob(pattern):
         with open(module) as f:
