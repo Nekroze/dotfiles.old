@@ -1,15 +1,14 @@
 ; Package list
 (setq package-list '(marmalade makefile-runner org
-                               ample-zen-theme
-                               markdown-mode git-commit
-                               git-commit-mode gitconfig
+                               solarized-theme markdown-mode
+                               git-commit git-commit-mode
                                gitignore-mode flycheck flymake
                                auto-complete auto-indent-mode
-                               lineno marmalade python
-                               starter-kit starter-kit-bindings
-                               idomenu ido-ubiquitous lua-mode
+                               lineno python starter-kit
+                               starter-kit-bindings lua-mode
                                flymake-lua d-mode flymake-d
-                               flylisp))
+                               flylisp idomenu ido-ubiquitous
+                               gitconfig))
 ; Repositories
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
