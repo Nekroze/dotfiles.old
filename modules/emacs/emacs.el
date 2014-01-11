@@ -14,6 +14,9 @@
 ;; Font
 (set-face-attribute 'default nil :height 100)
 
+;; Disable hl-line-mode
+(remove-hook 'coding-hook 'turn-on-hl-line-mode)
+
 ;; Change Keybinds
 ; Makes keeping emacs open for longer periods easier
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
