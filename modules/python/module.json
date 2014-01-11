@@ -2,8 +2,11 @@
     "name": "Python",
     "description": "Install some python packages via pip",
     "script": "install.sh",
-    "silent": true
+    "silent": true,
+    "commands": [
+        
+    ],
     "dependencies": [
         
-        ]
+    ]
 }

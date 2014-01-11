@@ -2,8 +2,11 @@
     "name": "Git",
     "description": "Useful git configurations",
     "script": "install.sh",
-    "silent": true
+    "silent": true,
+    "commands": [
+        
+    ],
     "dependencies": [
         
-        ]
+    ]
 }

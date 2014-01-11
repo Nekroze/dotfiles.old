@@ -1,9 +1,12 @@
 {
     "name": "Arch",
     "description": "Install some great Arch Linux packages like yaourt and common apps",
-    "script": "install.sh,"
-    "silent": true
+    "script": "install.sh",
+    "silent": true,
+    "commands": [
+        
+    ],
     "dependencies": [
         
-        ]
+    ]
 }

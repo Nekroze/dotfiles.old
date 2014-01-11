@@ -2,8 +2,11 @@
     "name": "Terminator",
     "description": "Solarized settings for Terminator.",
     "script": "install.sh",
-    "silent": true
+    "silent": true,
+    "commands": [
+        
+    ],
     "dependencies": [
         
-        ]
+    ]
 }

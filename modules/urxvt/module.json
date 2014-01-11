@@ -2,8 +2,11 @@
     "name": "Urxvt",
     "description": "Solarized settings for Urxvt",
     "script": "install.sh",
-    "silent": true
+    "silent": true,
+    "commands": [
+        
+    ],
     "dependencies": [
         
-        ]
+    ]
 }

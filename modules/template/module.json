@@ -2,8 +2,11 @@
     "name": "Template",
     "description": "Does things.",
     "script": "install.sh",
-    "silent": true
+    "silent": true,
+    "commands": [
+        
+    ],
     "dependencies": [
         
-        ]
+    ]
 }

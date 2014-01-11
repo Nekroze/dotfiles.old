@@ -2,8 +2,11 @@
     "name": "Emacs",
     "description": "Install emacs theme applies better default settings etc.",
     "script": "install.sh",
-    "silent": true
+    "silent": true,
+    "commands": [
+        
+    ],
     "dependencies": [
         
-        ]
+    ]
 }
