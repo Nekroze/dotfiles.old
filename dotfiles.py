@@ -81,6 +81,10 @@ def main(args):
 
     If no arguments are given to this script then the user will be asked about
     installing each module after being given its description.
+
+    This script can take a whitelist of module names to be executed or the
+    special arguemnt ``silent`` which will automatically execute any modules
+    that can be silent and not ask questions.
     """
     detect_package_manager()
     # Load all module definitions
@@ -97,6 +101,13 @@ def main(args):
         del modules["Template"]
 
     if args:
+        # Allow special execution of silent modules only
+        if [1 for module in args if module.lower() == "silent"]:
+            for name in modules:
+                if modules[name]["silent"]:
+                    environ["SILENT"] = "TRUE"
+                    just_execute(modules[name]["script"])
+
         # Ensure all args are valid module names
         bad_args = [module for module in args if module not in modules]
         if bad_args:
