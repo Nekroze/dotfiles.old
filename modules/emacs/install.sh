@@ -5,7 +5,7 @@
 ./write.py "export EDITOR=$MODULE/emacsclient.sh" ~/.zshrc
 ./write.py "export VISUAL=\$EDITOR" ~/.zshrc
 
-for line in $(cat $DOTFILES/modules/emacs/Xresources); do
+for line in $(cat $MODULE/Xresources); do
     ./write.py $line ~/.Xresources
 done
 
