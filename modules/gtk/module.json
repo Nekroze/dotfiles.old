@@ -1,0 +1,12 @@
+{
+    "name": "Gtk",
+    "description": "Solarized gtk configs",
+    "script": "install.sh",
+    "silent": true,
+    "commands": [
+        "git"
+    ],
+    "dependencies": [
+        
+    ]
+}
