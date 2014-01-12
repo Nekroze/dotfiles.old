@@ -43,6 +43,7 @@ def just_execute(module):
               module["name"], ' '.join(missing)))
         return False
     else:
+	print("c[~] Executing " + module["name"])
         environ["MODULE"] = path.dirname(module["script"])
         check_call(module["script"], shell=True)
         return True
@@ -102,7 +103,6 @@ def main(args):
     # Load all module definitions
     pattern = path.join(environ["MODULES"], "*", "module.json")
     modules = {}
-    devnull = open(os.devnull)
     for module in glob(pattern):
         with open(module) as f:
             struct = json.load(f)
@@ -110,10 +110,9 @@ def main(args):
         modules[struct["name"]] = struct
         # Check for commands
         for command in struct["commands"]:
-            if call(["which", command], shell=True, stdout=devnull, stderr=devnull):
+            if call(["which", command]):
                 print("WARNING: missing command " + command + " can cause problems")
                 MISSING_COMMANDS.append(command)
-    devnull.close()
 
     # Ensure module template is not used
     if "Template" in modules:
