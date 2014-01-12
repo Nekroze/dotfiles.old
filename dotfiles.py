@@ -39,8 +39,8 @@ def just_execute(module):
     """
     missing = [com for com in MISSING_COMMANDS if com in module["commands"]]
     if missing:
-        print("!! {0} module requires the following commands: {1}",
-              [module["name"], ' '.join(missing)])
+        print("!! {0} module requires the following commands: {1}".format(
+              module["name"], ' '.join(missing)))
         return False
     else:
         environ["MODULE"] = path.dirname(module["script"])
@@ -110,7 +110,8 @@ def main(args):
         modules[struct["name"]] = struct
         # Check for commands
         for command in struct["commands"]:
-            if call(["which", command], stdout=devnull, stderr=devnull):
+            if call(["which", command], shell=True, stdout=devnull, stderr=devnull):
+                print("WARNING: missing command " + command + " can cause problems")
                 MISSING_COMMANDS.append(command)
     devnull.close()
 
@@ -124,7 +125,7 @@ def main(args):
             for name in modules:
                 if modules[name]["silent"]:
                     environ["SILENT"] = "TRUE"
-                    just_execute(modules[name]["script"])
+                    just_execute(modules[name])
                     return 0
 
         # Ensure all args are valid module names
@@ -137,7 +138,7 @@ def main(args):
         # Execute selected modules
         for name in modules:
             if name in args:
-                just_execute(modules[name]["script"])
+                just_execute(modules[name])
                 return 0
     else:
         # Execute each module
