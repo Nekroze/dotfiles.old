@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $SILENT="TRUE" ] ; then
+if [ -z $SILENT ] ; then
     echo
     echo "What is your name?"
     read NAME
@@ -8,6 +8,8 @@ if [ $SILENT="TRUE" ] ; then
     read EMAIL
     git config --global user.name "$NAME"
     git config --global user.email "$EMAIL"
+else
+    echo "Skipping git name and email config"
 fi
 git config --global --add color.ui true
 git config --global push.default tracking

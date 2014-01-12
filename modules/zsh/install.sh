@@ -1,9 +1,9 @@
 #!/bin/sh
 
-./write.py.py "source $MODULES/shell/exports.sh" ~/.zshrc
-./write.py.py "source $MODULES/shell/aliases.sh" ~/.zshrc
-./write.py.py "source $MODULE/zsh.sh" ~/.zshrc
-./write.py.py "DEBIAN_PREVENT_KEYBOARD_CHANGES=yes" ~/.zshenv
+./write.py "source $MODULES/shell/exports.sh" ~/.zshrc
+./write.py "source $MODULES/shell/aliases.sh" ~/.zshrc
+./write.py "source $MODULE/zsh.sh" ~/.zshrc
+./write.py "DEBIAN_PREVENT_KEYBOARD_CHANGES=yes" ~/.zshenv
 
 # Clone oh-my-zsh as required.
 if [ ! -d ~/oh-my-zsh/ ] ; then

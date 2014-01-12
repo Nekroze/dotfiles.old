@@ -125,7 +125,7 @@ def main(args):
                 if modules[name]["silent"]:
                     environ["SILENT"] = "TRUE"
                     just_execute(modules[name])
-                    return 0
+            return 0
 
         # Ensure all args are valid module names
         bad_args = [module for module in args if module not in modules]
