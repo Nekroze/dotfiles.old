@@ -1,5 +1,5 @@
 ; Package list
-(setq package-list '(marmalade makefile-runner org
+(setq package-list '(marmalade makefile-runner org cobra-mode
                                solarized-theme markdown-mode
                                git-commit git-commit-mode
                                gitignore-mode flycheck flymake
