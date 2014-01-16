@@ -16,6 +16,10 @@ makepkg -si
 cd ..
 rm -rf yaourt
 
+./write.py "EDITFILES=0" ~/.yaourtrc
+./write.py "NOCONFIRM=0" ~/.yaourtrc
+./write.py "TERMINALTITLE=1" ~/.yaourtrc
+
 yaourt -s aurvote
 yaourt -s git wget emacs-nox rxvt-unicode zsh
 yaourt -s python python-virtualenvwrapper python-pip python-tox python-sphinx python2 pypy
