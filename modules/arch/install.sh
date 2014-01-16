@@ -18,7 +18,7 @@ rm -rf yaourt
 
 ./write.py "EDITFILES=0" ~/.yaourtrc
 ./write.py "NOCONFIRM=0" ~/.yaourtrc
-./write.py "TERMINALTITLE=1" ~/.yaourtrc
+./write.py "TERMINALTITLE=0" ~/.yaourtrc
 
 yaourt -s aurvote
 yaourt -s git wget emacs-nox rxvt-unicode zsh
