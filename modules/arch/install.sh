@@ -20,6 +20,6 @@ rm -rf yaourt
 ./write.py "NOCONFIRM=0" ~/.yaourtrc
 ./write.py "TERMINALTITLE=0" ~/.yaourtrc
 
-yaourt -s aurvote
-yaourt -s git wget emacs-nox rxvt-unicode zsh
-yaourt -s python python-virtualenvwrapper python-pip python-tox python-sphinx python2 pypy
+yaourt -S aurvote
+yaourt -S git wget emacs-nox rxvt-unicode zsh
+yaourt -S python python-virtualenvwrapper python-pip python-tox python-sphinx python2 pypy
