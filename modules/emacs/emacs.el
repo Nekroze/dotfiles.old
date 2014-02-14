@@ -19,9 +19,9 @@
 
 ;; Change Keybinds
 ; Makes keeping emacs open for longer periods easier
-(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
-(global-set-key (kbd "C-x C-k") 'save-buffers-kill-emacs)
-(global-set-key (kbd "C-x C-c") 'kill-this-buffer)
+;(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+;(global-set-key (kbd "C-x C-k") 'save-buffers-kill-emacs)
+;(global-set-key (kbd "C-x C-c") 'kill-this-buffer)
 
 ;;Markdown Mode
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
@@ -103,7 +103,7 @@
 (setq scroll-conservatively 1)
 
 ;;Support Wheel Mouse Scrolling
-(mouse-wheel-mode t)
+;(mouse-wheel-mode t)
 
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
@@ -198,3 +198,5 @@
 (load-theme 'solarized-dark t)
 ;; Fix for some console themes - let term decide bg color
 (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
