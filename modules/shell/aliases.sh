@@ -80,7 +80,7 @@ paksee () {
         pacman -Ss $@
     fi
 }
-update () {
+pakup () {
     if hash apt-get 2>/dev/null; then
         sudo apt-get update
         sudo apt-get dist-upgrade -y
