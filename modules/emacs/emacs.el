@@ -16,7 +16,9 @@
 
 ;; Disable hl-line-mode
 (remove-hook 'coding-hook 'turn-on-hl-line-mode)
+(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 (global-hl-line-mode -1)
+(hl-line-mode -1)
 
 ;; Change Keybinds
 ; Makes keeping emacs open for longer periods easier
