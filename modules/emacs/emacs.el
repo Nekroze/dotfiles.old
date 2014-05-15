@@ -128,6 +128,8 @@
 ;; Cygwin fix for home and end keys 
 (global-set-key "\M-[H" 'beginning-of-line)
 (global-set-key "\M-[F" 'end-of-line)
+;; Putty line END fix
+(define-key global-map [select] 'end-of-line)
 
 ;; ensure unix EOL
 (setq inhibit-eol-conversion t)
