@@ -22,3 +22,7 @@ bindkey -M isearch . self-insert
 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
+
+# Fix putty home and end keys
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
