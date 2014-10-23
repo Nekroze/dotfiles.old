@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/bin/env python2
 # -*- mode: python; coding: utf-8 -*-
 from __future__ import print_function
 __doc__ = """Attempt at a universal package manager wrapper."""
